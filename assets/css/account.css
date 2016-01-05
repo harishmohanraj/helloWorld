@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------
+Mobile Nav
+------------------------------------------------------------------- */
+section#account-nav{
+    width:100%;
+    background-color: #6a6d72;
+}
+
+section#account-nav .left-col{
+    width: 50%;
+    display: inline-block;
+    float: left;
+    background-color: #8c9197;
+}
+
+section#account-nav .left-col p{
+    margin-bottom: 12px;
+    padding-top: 4em;
+    color:white;
+    font-size: 16px;
+    display: inline-block;
+}
+section#account-nav .left-col span img{
+    margin-left: -15px;
+    margin-right: 15px;
+}
+/* ------------------------------------------------------------------
+Body Content
+------------------------------------------------------------------- */
+section#account-property p{
+    font-size: 16px;
+}
+section#account-property .list-property{
+     border: 2px solid #47c3c5;
+     margin: 10px 5px;
+    text-align: center;
+}
+section#account-property .list-property .list-property-icon{
+    padding:40px 103px 25px 103px;
+}
+section#account-property .list-property .list-property-icon p{
+    color:#47c3c5;
+    font-size: 18px;
+    margin: 15px 0px 0px 0px;
+}
+section#account-property .list-property p.list-property-text{
+    margin: 0px;
+    line-height:16px;
+    background-color: #47c3c5;
+    color: white;
+    padding:12px 0px;
+}
+
+section#account-property .existing-property{
+    overflow: hidden;
+}

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>StandbyApps</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link href="assets/css/simpletextrotator.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="assets/css/et-line-font.css" rel="stylesheet">
+	<link href="assets/css/magnific-popup.css" rel="stylesheet">
+	<link href="assets/css/flexslider.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+
+	<!-- Template core CSS -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!-- Custom css -->
+	<link href="assets/css/custom.css" rel="stylesheet">
+
+	<!-- Custom css -->
+	<link href="assets/css/standbyapps.css" rel="stylesheet">
+
+	<!-- Page css -->
+	<link href="assets/css/account.css" rel="stylesheet">
+
+	<script src="assets/angular/angular.min.js"></script>
+	<script src="assets/angular/angular-route.min.js"></script>
+	<script src="assets/angular/angular-resource.min.js"></script>
+	<script src="assets/angular/ng-file-upload-shim.min.js"></script>
+	<script src="assets/angular/ng-file-upload.min.js"></script>
+
+
+	<script src="loginfb.js"></script>
+
+</head>
+<body ng-app = "sbaapp">
+
+<!-- PRELOADER -->
+<div class="page-loader">
+	<div class="loader">Loading...</div>
+</div>
+<!-- /PRELOADER -->
+
+<!-- MOBILE MENU -->
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+	<a class="navmenu-brand" href="#" id="standbylogomobile">&nbsp;</a>
+	<ul class="nav navmenu-nav">
+		<li class="active"><a href="./">Home</a></li>
+		<li><a href="https://itunes.apple.com/us/app/morpholio-board.../id761867957?mt=8&uo=4" target=_blank>Download the App</a></li>
+		<li><a href="#">Sign Up</a></li>
+		<li><a href="/host">Become a Host</a></li>
+		<li><a href="/help">Help Center</a></li>
+	</ul>
+</div>
+<!-- / MOBILE MENU -->
+
+
+<!-- NAVIGATION navbar-transparent -->
+<nav class="navbar navbar-custom  navbar-fixed-top" role="navigation" ng-controller = "sbaDefaultController">
+
+	<div class="container">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+				<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse"> -->
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand hidden-xs" id="standbylogo" href="index.html">{{sbaProj.title}}</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="custom-collapse">
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li><a href="#popup-signup" class="open-popup-signup"><div class="btn signupbutton">Sign Up</div></a></li>
+
+				<li><a href="#" class="hostbuttonlink"><div class="btn hostbutton">Become a Host</div></a></li>
+
+			</ul>
+		</div>
+
+	</div>
+
+</nav>
+<!-- /NAVIGATION -->
+
+
+<!-- HOME -->
+<section id="account-nav">
+
+	<div class="container">
+		<div class="left-col">
+			<div class="row text-center" >
+				<div class="col-xs-12">
+					<span><img src="assets/amentities/amenity-air_condition.png"></span>
+					<p>My Properties</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<!-- /HOME -->
+
+
+
+<!-- WRAPPER -->
+<div class="wrapper">
+	<!-- FEATURES -->
+	<section class="module-small p-t-0 p-b-0 p-t-sm-0" id="account-property">
+		<div class="container container-smaller">
+			<div class="list-property">
+				<div class="list-property-icon">
+					<span><img src="assets/amentities/amenity-air_condition.png"></span>
+					<p>List your first property and start earning money</p>
+				</div>
+				<p class="list-property-text">List a new property</p>
+			</div>
+			<div class="existing-property">
+				<div class="list col-xs-12">
+					<img src="assets/images/slide1mobile.jpg" class="img-responsive">
+					<p></p>
+					<span></span>
+					<p></p>
+					<p></p>
+					<p></p>
+					<select></select>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- FOOTER -->
+	<footer class="footer bg-brand-green">
+
+		<div class="container container-smaller">
+
+			<div class="row">
+
+				<div class="col-sm-6">
+					<ul>
+						<li class="copyright font-inc">
+							<a href="#" class="more-link">About Us</a>
+						</li>
+						<li class="copyright font-inc">
+							<a href="#" class="more-link">Host</a>
+						</li>
+						<li class="copyright font-inc">
+							<a href="#" class="more-link">Help Center</a>
+						</li>
+						<li class="copyright font-inc">
+							<a href="#" class="more-link">Terms & Privacy</a>
+						</li>
+						<li class="copyright font-inc">
+							<a href="#" class="more-link">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile hidden-xs">
+					<p class=" m-t-0 m-b-0">© 2016 <a href="index.html">StandbyApps</a>, Pay less, travel more</p>
+				</div>
+				<div class="col-sm-6 text-right  text-center-mobile">
+					<a href="#"><img src="assets/images/s-facebook.png" class="icon-social"></a>
+					<a href="#"><img src="assets/images/s-twitter.png"  class="icon-social"></a>
+					<a href="#"><img src="assets/images/s-instagram.png"  class="icon-social"></a>
+					<a href="#"><img src="assets/images/s-pinterest.png"  class="icon-social"></a>
+					<a href="#"><img src="assets/images/s-weibo.png"  class="icon-social"></a>
+					<a href="#"><img src="assets/images/s-wechat.png"  class="icon-social"></a>
+				</div>
+				<div class="col-xm-12 text-center-mobile visible-xs">
+					<p class=" m-t-20 m-b-0">© 2016 <a href="index.html">StandbyApps</a>, Pay less, travel more.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+	<!-- /FOOTER -->
+
+</div>
+<!-- /WRAPPER -->
+
+<!-- Scroll-up -->
+<div class="scroll-up">
+	<a href="#totop"><i class="fa fa-angle-double-up"></i></a>
+</div>
+
+
+<!-- more overlay -->
+<div id="moreitems">
+	<!-- WRAPPER -->
+	<div class="wrapper">
+
+		<section class="module-small p-t-20 p-b-60 p-t-sm-0" >
+			<div class="container" style="height:600px;">
+				<div class="close">&times;</div>
+				<h2 class="module-title font-alt align-center m-b-20">The StandbyApps</h2>
+				<div class="popup-slider" >
+					<ul class="slides">
+
+						<!-- SLIDE -->
+						<li class="s1">
+
+							<div class="slidebg " style="background-image:url(assets/images/slide1.jpg)"></div>
+
+							<div class="hs-caption container">
+								<div class="caption-content">
+									<div class="hs-title-size-3 font-alt m-b-20">
+
+									</div>
+									<div class="hs-title-size-1 font-inc">
+
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<!-- /SLIDE -->
+
+						<!-- SLIDE -->
+						<li class="s2">
+
+							<div class="slidebg " style="background-image:url(assets/images/slide2.jpg)"></div>
+
+							<div class="hs-caption container">
+								<div class="caption-content left">
+									<div class="hs-title-size-3 font-alt m-b-20">
+
+									</div>
+									<div class="hs-title-size-1 font-inc">
+
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<!-- /SLIDE -->
+
+						<!-- SLIDE -->
+						<li class="s3">
+
+							<div class="slidebg " style="background-image:url(assets/images/slide3.jpg)"></div>
+
+							<div class="hs-caption container">
+								<div class="caption-content right">
+									<div class="hs-title-size-3 font-alt m-b-20">
+
+									</div>
+									<div class="hs-title-size-1 font-inc">
+
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<!-- /SLIDE -->
+
+					</ul>
+				</div>
+
+			</div>
+		</section >
+
+	</div>
+</div>
+<!-- / more overlay -->
+
+<!-- sign up overlay -->
+<div  id="popup-signup" class="container mfp-hide" style="height:480px;width:760px;">
+	<div class="text-right closepopup close-mag-popup">&times;</div>
+
+	<div class="row">
+		<div class="col-sm-6 hidden-xs" style="height:480px;background: url(assets/images/life-style-2.png) center center;background-size:cover;">
+			&nbsp;
+		</div>
+		<div class="col-sm-6 alt-bg text-left" style="height:480px;padding:40px;font-size:13px">
+
+
+			<div class="title-size-4  font-alt  m-t-10 m-b-30 align-left">
+				Download the app and <b>travel more</b>
+			</div>
+			<div class="p-t-60 p-b-10">
+				Send me a free download link via text message
+			</div>
+			<div>
+				<form class="">
+					<div class="form-group" style="white-space:nowrap;">
+						<input class="form-control input-lg" type="text" placeholder="US +1 xxx-xxx-xxxx" style="border: #fff;">
+						<button type="submit" class="btn  bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;width: 100%;">Send</button>
+					</div>
+				</form>
+
+			</div>
+			<div class="p-t-10 p-b-10">
+				-or-
+			</div>
+			<img src="assets/images/appstoreicon.png" class="appstoreicon">
+
+		</div>
+
+	</div>
+
+</div>
+<!-- / sign up overlay -->
+
+<!-- property details -->
+<div id="popup-property" class="container mfp-hide" style="height:480px;width:760px;">
+	<div class="text-right closepopup close-mag-popup">&times;</div>
+
+	<div class="row">
+		<div class="col-sm-6 hidden-xs alt-bg" style="height:480px;padding:40px;font-size:13px;">
+
+
+			<div class="content-box content-box-property"  data-id="4" style="width:90%;margin: auto;margin-top: 7px;">
+				<div class="content-box-property-image" style="height:200px;background-image: url(assets/images/property.jpg);">
+					<div class="dealtag bg-brand-yellow text-left">
+						<img src="assets/images/t-hot_deal.png" style="width:12px;"><span>Hot Deal</span>
+					</div>
+
+				</div>
+
+				<div class="content-box-property-desc">
+					<div class="content-box-name" style="font-size: 18px;">Cozy Room in Chelsea</div>
+					<div class="content-box-rating" >
+						<i class="fa fa-star brand-green"></i>
+						<i class="fa fa-star brand-green"></i>
+						<i class="fa fa-star brand-green"></i>
+						<i class="fa fa-star brand-green"></i>
+						<i class="fa fa-star-half-o brand-green"></i>
+					</div>
+					<div class="content-box-loc" >New York</div>
+					<div class="content-box-price" >$380</div>
+					<div class="content-box-pricewas" >was $500</div>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="col-sm-6 alt-bg text-left" style="height:480px;padding:40px;font-size:13px;">
+
+
+			<div class="desc-property-name m-b-10 align-left">
+				<strong>About the place</strong>
+			</div>
+			<div class="desc-property">
+				Inspired by European townhouses, this classically beautiful hotel is across from the emerald expanse of Central Park, one block from Fifth Avenue...
+			</div>
+			<div class="m-t-20">
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-breakfast.png"></div>
+				</div>
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-cafe machine.png"></div>
+				</div>
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-dryer.png"></div>
+				</div>
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-elevator.png"></div>
+				</div>
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-essentials.png"></div>
+				</div>
+				<div class="icon-amentity-circle">
+					<div class="icon-amentity-circle-inner"><img src="assets/images/amenity-family friendly.png"></div>
+				</div>
+			</div>
+			<div class="p-t-30 p-b-10 desc-property">
+				<strong>Send me a free download link via text message</strong>
+			</div>
+			<div>
+				<form class="">
+					<div class="form-group" style="white-space:nowrap;">
+						<input class="form-control input-lg" type="text" placeholder="US +1 xxx-xxx-xxxx" style="border: #fff;">
+						<button type="submit" class="btn  bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;width: 100%;">Send</button>
+					</div>
+				</form>
+
+			</div>
+			<div class="p-t-0 p-b-10">
+				-or-
+			</div>
+			<img src="assets/images/appstoreicon.png" class="appstoreicon">
+
+		</div>
+
+	</div>
+
+</div>
+<!-- / property details -->
+
+<!-- under off canvas overlay -->
+<div id="overlay">
+</div>
+<!-- / under off canvas overlay -->
+
+<!-- Javascript files -->
+<script src="assets/js/jquery-2.1.3.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/jquery.simple-text-rotator.min.js"></script>
+<script src="assets/js/jqBootstrapValidation.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="assets/js/gmaps.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.js"></script>
+<script src="assets/js/jquery.flexslider-min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.fitvids.js"></script>
+<script src="assets/js/smoothscroll.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/standbyapps.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script src="signup.js"></script>
+
+<!-- flags -->
+<link href="assets/css/flags/flags.css" rel="stylesheet">
+<!-- script src="assets/js/jquery.flagstrap.js"></script -->
+<script>
+	// $('#demo').flagStrap({
+	//       countries: {
+	//           "AU": "AU +61",
+	//           "GB": "UK +44",
+	//           "US": "US +1"
+	//       },
+	//       buttonSize: "btn-md",
+	//       buttonType: "btn-default",
+	//       labelMargin: "10px",
+	//       scrollable: false,
+	//       scrollableHeight: "350px"
+	//   	}
+	// );
+
+	$(".dropdown-menu li a").click(function(){
+
+		var selText = $(this).html();
+		$(this).closest('div').find('button[data-toggle="dropdown"]').html(selText);
+		//return false;
+	});
+
+</script>
+
+<link href="assets/css/jasny-bootstrap.css" rel="stylesheet" media="screen">
+<script src="assets/js/jasny-bootstrap.js"></script>
+
+</body>
+</html>

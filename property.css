@@ -1,0 +1,56 @@
+.country-flags:hover, .country-flags:focus {
+  background-color: #fff;
+}
+.module-small .container {
+    padding-bottom: 15px;
+}
+
+.nopadding { padding:0px; } 
+
+button.btn-img {
+	background-image: url("assets/images/login-signup/icon/1x/add_photo.png");
+	color: #47c3c6;
+    background-position: center 25px;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border: 1px solid #47c3c6;
+    font-size: 15px;
+    width: 95%;
+    margin-right: 5px;
+    height: 100px;
+        padding: 0px;
+        padding-top: 39px;
+        text-align: center;
+} 
+
+button.btn-img.btn-info:active,button.btn-img.btn-info:focus, button.btn-img.btn-info:hover {
+    color: #47c3c6;
+    background-color: #fff;
+	background-image: url("assets/images/login-signup/icon/1x/add_photo.png");
+}
+
+.country,
+.address_street_1,
+.address_street_2,
+.city,
+.state{
+   margin-bottom: 10px;
+}
+
+.submit.btn-info, .submit.btn-info.focus, .submit.btn-info:hover, .submit.btn-info:active {
+    background-color: #47c3c6;
+    border: none;
+}
+
+/*xsmall*/
+@media (max-width: 767px)
+{
+   button.btn-img {
+    width: 100%;
+	margin-bottom: 10px;
+   }
+   p {
+    font-size: 18px;
+   }
+}
+
