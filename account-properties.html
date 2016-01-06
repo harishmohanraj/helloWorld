@@ -116,27 +116,80 @@
 
 
 <!-- WRAPPER -->
-<div class="wrapper">
+<div class="wrapper" ng-controller="sbaPropertyController">
 	<!-- FEATURES -->
 	<section class="module-small p-t-0 p-b-0 p-t-sm-0" id="account-property">
 		<div class="container container-smaller">
-			<div class="list-property">
-				<div class="list-property-icon">
-					<span><img src="assets/amentities/amenity-air_condition.png"></span>
-					<p>List your first property and start earning money</p>
+			<div class="prop-wrapper">
+				<div class="list-property col-md-4">
+					<div class="list-property-icon">
+						<span><img src="assets/amentities/amenity-air_condition.png"></span>
+						<p>List your first property and start earning money</p>
+					</div>
+					<p class="list-property-text">List a new property</p>
 				</div>
-				<p class="list-property-text">List a new property</p>
+				<div class="existing-property col-md-6">
+					<div class="list col-xs-12" ng-repeat="property in properties">
+						<img ng-src="{{property.cover_media.thumbnail_url}}" class="img-responsive">
+						<div class="prop-details">
+						<p class="room-heading">{{property.name}}</p>
+						<span>{{property.rating}}</span>
+						<p>Exact nightly price : $500</p>
+						<p>Minimum nightly price : $300</p>
+						<p class="manage-prop">Manage Property</p>
+						<select>
+						<option>Inactive</option>
+						<option>Active</option>
+						</select>
+						</div>
+
+						</div>
+				<!--<div class="list col-xs-12">-->
+					<!--<img src="assets/images/property1.jpg" class="img-responsive">-->
+					<!--<div class="prop-details">-->
+						<!--<p class="room-heading">Cozy Room in Chelsea</p>-->
+						<!--<span></span>-->
+						<!--<p>Exact nightly price : $500</p>-->
+						<!--<p>Minimum nightly price : $300</p>-->
+						<!--<p class="manage-prop">Manage Property</p>-->
+						<!--<select>-->
+							<!--<option>Inactive</option>-->
+							<!--<option>Active</option>-->
+						<!--</select>-->
+					<!--</div>-->
+
+				<!--</div>-->
+				<!--<div class="list col-xs-12">-->
+					<!--<img src="assets/images/property1.jpg" class="img-responsive">-->
+					<!--<div class="prop-details">-->
+						<!--<p class="room-heading">Cozy Room in Chelsea</p>-->
+						<!--<span></span>-->
+						<!--<p>Exact nightly price : $500</p>-->
+						<!--<p>Minimum nightly price : $300</p>-->
+						<!--<p class="manage-prop">Manage Property</p>-->
+						<!--<select>-->
+							<!--<option>Inactive</option>-->
+							<!--<option>Active</option>-->
+						<!--</select>-->
+					<!--</div>-->
+
+				<!--</div>-->
+				<!--<div class="list col-xs-12">-->
+					<!--<img src="assets/images/property1.jpg" class="img-responsive">-->
+					<!--<div class="prop-details">-->
+						<!--<p class="room-heading">Cozy Room in Chelsea</p>-->
+						<!--<span></span>-->
+						<!--<p>Exact nightly price : $500</p>-->
+						<!--<p>Minimum nightly price : $300</p>-->
+						<!--<p class="manage-prop">Manage Property</p>-->
+						<!--<select>-->
+							<!--<option>Inactive</option>-->
+							<!--<option>Active</option>-->
+						<!--</select>-->
+					<!--</div>-->
+
+				<!--</div>-->
 			</div>
-			<div class="existing-property">
-				<div class="list col-xs-12">
-					<img src="assets/images/slide1mobile.jpg" class="img-responsive">
-					<p></p>
-					<span></span>
-					<p></p>
-					<p></p>
-					<p></p>
-					<select></select>
-				</div>
 			</div>
 		</div>
 	</section>

@@ -219,7 +219,7 @@
                   return false;  
                }
 
-              var nUser = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/unauth/register',  { 
+              var nUser = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/unauth/register',  {
                 username:'@username' , password: '@password',  email: '@email', first_name: '@first_name', 
                 last_name:'@last_name', options: '@options',  image_url: '@image_url', phone:'@phone', dob:'@dob' }); 
            
@@ -361,7 +361,7 @@
             
           }; 
 
-          
+
 
           $scope.addProperty = function () { 
 
@@ -523,9 +523,38 @@
     
         }]); 
    
-     
-   
-  jQuery(document).ready(function () { 
+     // Property controller
+    app.controller("sbaPropertyController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+
+        $scope.getProps = function () {
+            var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
+
+            User.get( {}, function(data){
+
+                if(data.success ) {
+
+                    $scope.properties = data.properties;
+
+
+
+                } else {
+
+                    //$scope.sbaProj.frmError = data.error;
+                }
+
+            }, function () {
+                //error handle
+                $window.alert("Some error occurred. please contact your admin.");
+
+            });
+        }
+
+        $scope.getProps();
+
+    }]);
+
+
+    jQuery(document).ready(function () {
     var navListItems = jQuery('div.setup-panel div a'),
             allWells = jQuery('.setup-content'),
             allNextBtn = jQuery('.nextBtn'); 

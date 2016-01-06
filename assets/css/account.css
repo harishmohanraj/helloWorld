@@ -54,3 +54,33 @@ section#account-property .list-property p.list-property-text{
 section#account-property .existing-property{
     overflow: hidden;
 }
+section#account-property .existing-property .list{
+    border-bottom: 1px solid gray;
+    margin-top: 40px;
+}
+section#account-property .existing-property .list:last-child{
+    border-bottom: none;
+}
+section#account-property .existing-property .prop-details{
+    margin: 15px;
+}
+section#account-property .existing-property .prop-details .room-heading{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 34px;
+}
+section#account-property .existing-property .prop-details .manage-prop{
+    color:#47c3c5;
+}
+
+
+@media screen and (min-width: 1004px){
+    section#account-property .list-property{
+        padding:0;
+        margin-top:40px;
+    }
+    section#account-property .list-property .list-property-icon{
+        padding:20px;
+    }
+}
+
