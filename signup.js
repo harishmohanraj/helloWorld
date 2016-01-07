@@ -4,7 +4,46 @@
     // anugular.registerController
     // addPropertyImg(); 
 
-  var app = angular.module('sbaapp', ['ngResource', 'ngFileUpload']); 
+  var app = angular.module('sbaapp', ['ngResource', 'ngFileUpload' , 'ngRoute']);
+
+    // configure our routes
+    app.config(function($routeProvider) {
+        $routeProvider
+
+        // route for the home page
+            .when('/', {
+                templateUrl : 'dashboard.html',
+                controller  : 'dashboardController'
+            })
+
+            // route for the about page
+            .when('/properties', {
+                templateUrl : 'properties.html',
+                controller  : 'propertiesController'
+            })
+
+            // route for the contact page
+            .when('/reservations', {
+                templateUrl : 'reservations.html',
+                controller  : 'reservationsController'
+            })
+
+            // route for the contact page
+            .when('/inbox', {
+                templateUrl : 'inbox.html',
+                controller  : 'inboxController'
+            })
+
+            // route for the contact page
+            .when('/settings', {
+                templateUrl : 'settings.html',
+                controller  : 'settingsController'
+            });
+
+
+
+
+    });
 
          app.controller("sbaDefaultController", [ '$scope', '$resource', 'Upload',  function($scope, $resource, Upload) {
             $scope.sbaProj = {};
@@ -152,7 +191,7 @@
 
                       //@todo redirect or further op __ 
                       
-                      $window.location.href = "signup.html"; 
+                      $window.location.href = "profile.html";
 
                       //$scope.reset();  
 
@@ -523,8 +562,44 @@
     
         }]); 
    
-     // Property controller
-    app.controller("sbaPropertyController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+    // // Property controller
+    //app.controller("sbaPropertyController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+    //
+    //    $scope.getProps = function () {
+    //        var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
+    //
+    //        User.get( {}, function(data){
+    //
+    //            if(data.success ) {
+    //
+    //                $scope.properties = data.properties;
+    //
+    //
+    //
+    //            } else {
+    //
+    //                //$scope.sbaProj.frmError = data.error;
+    //            }
+    //
+    //        }, function () {
+    //            //error handle
+    //            $window.alert("Some error occurred. please contact your admin.");
+    //
+    //        });
+    //    }
+    //
+    //    $scope.getProps();
+    //
+    //}]);
+
+    app.controller("dashboardController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+
+        // create a message to display in our view
+        $scope.message = 'Dashboard Page Goes Here!';
+
+    }]);
+
+    app.controller("propertiesController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
 
         $scope.getProps = function () {
             var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
@@ -534,7 +609,9 @@
                 if(data.success ) {
 
                     $scope.properties = data.properties;
-
+                    setTimeout(function(){
+                        jQuery('section#account-property .existing-property .prop-details span.stars').stars();
+                    },10)
 
 
                 } else {
@@ -553,11 +630,32 @@
 
     }]);
 
+    app.controller("reservationsController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+
+        // create a message to display in our view
+        $scope.message = 'Reservation Page Goes Here!';
+
+    }]);
+
+    app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+
+        // create a message to display in our view
+        $scope.message = 'Inbox Page Goes Here!';
+
+    }]);
+
+    app.controller("settingsController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
+
+        // create a message to display in our view
+        $scope.message = 'Settings Page Goes Here!';
+
+    }]);
 
     jQuery(document).ready(function () {
     var navListItems = jQuery('div.setup-panel div a'),
             allWells = jQuery('.setup-content'),
-            allNextBtn = jQuery('.nextBtn'); 
+            allNextBtn = jQuery('.nextBtn');
+            //$star = jQuery('section#account-property .existing-property .prop-details span.stars');
 
             allWells.hide(); 
   
@@ -604,6 +702,11 @@
       //remove disabled 
       jQuery('div.setup-panel div a').removeAttr('disabled'); 
     }
+
+        // calculate star
+        //if($star){
+        //    $star.stars();
+        //}
     
 
   }); 
@@ -616,4 +719,12 @@ function signUpGotoNextStep(stepid) {
    nextStepWizard.removeAttr('disabled').trigger('click');
 
 }
+
+// Star rating calculation
+
+    $.fn.stars = function() {
+        return $(this).each(function() {
+            $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+        });
+    }
 
