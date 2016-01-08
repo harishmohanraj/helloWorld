@@ -1,31 +1,60 @@
-<div class="prop-wrapper row">
-	<div class="list-property col-md-3">
-		<div class="list-property-icon">
-			<span><img src="assets/amentities/amenity-air_condition.png"></span>
-			<p>List your first property and start earning money</p>
+<div class="property-wrapper">
+	<div class="row list-existing">
+		<div class="list-property col-md-3">
+			<div class="list-property-icon">
+				<span><img src="assets/amentities/amenity-air_condition.png"></span>
+				<p>List your first property and start earning money</p>
+			</div>
+			<div class="list-property-text">List a new property</div>
 		</div>
-		<p class="list-property-text">List a new property</p>
-	</div>
-	<div class="existing-property col-md-7 col-md-offset-1">
-		<div class="list col-xs-12" ng-repeat="property in properties">
-			<div class="property-list-wrapper">
-				<img ng-src="{{property.cover_media.thumbnail_url}}" class="img-responsive">
-				<div class="prop-details">
-					<p class="room-heading">{{property.name}}</p>
-					<span class="stars">{{property.rating}}</span>
-					<p>Exact nightly price : $500</p>
-					<p>Minimum nightly price : $300</p>
-					<p class="manage-prop"><i class="fa fa-fw"></i>Manage Property</p>
+		<div class="existing-property col-md-7 col-md-offset-1">
+			<div class="list col-xs-12" ng-repeat="property in properties">
+				<div class="property-list-wrapper">
+					<img ng-src="{{property.cover_media.thumbnail_url}}" class="img-responsive">
+					<div class="prop-details">
+						<p class="room-heading">{{property.name}}</p>
+						<span class="stars">{{property.rating}}</span>
+						<p>Exact nightly price : $500</p>
+						<p>Minimum nightly price : $300</p>
+						<p class="manage-prop"><i class="fa fa-fw"></i>Manage Property</p>
+
+					</div>
+					<div class="prop-select pull-right">
+						<select class="form-control">
+							<option>Inactive</option>
+							<option>Active</option>
+						</select>
+					</div>
 
 				</div>
-				<div class="prop-select pull-right">
-					<select class="form-control">
-						<option>Inactive</option>
-						<option>Active</option>
-					</select>
-				</div>
-
 			</div>
 		</div>
 	</div>
+	<div class="row add-new">
+		        <div class="row">
+
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item"><span class="active round">1</span>Category</a>
+                    <a href="#" class="list-group-item"><span class="round">2</span>Category</a>
+                    <a href="#" class="list-group-item"><span class="round">3</span>Category</a>
+                    <a href="#" class="list-group-item"><span class="round">4</span>Category</a>
+                    <a href="#" class="list-group-item"><span class="round">5</span>Category</a>
+                    <a href="#" class="list-group-item"><span class="round">6</span>Category</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+               
+
+               
+
+            </div>
+
+        </div>
+
+    
+	</div>
+	
 </div>

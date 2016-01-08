@@ -56,12 +56,13 @@ section#account-property .list-property .list-property-icon p{
     font-size: 18px;
     margin: 15px 0px 0px 0px;
 }
-section#account-property .list-property p.list-property-text{
+section#account-property .list-property .list-property-text{
     margin: 0px;
     line-height:16px;
     background-color: #47c3c5;
     color: white;
     padding:12px 0px;
+    cursor: pointer;
 }
 
 section#account-property .existing-property{
@@ -123,3 +124,26 @@ section#account-property .existing-property .prop-details .manage-prop i{
     }
 }
 
+/*
+add new property page
+*/
+.property-wrapper .list-existing{
+    display: block;
+}
+.property-wrapper .add-new{
+    display: none;
+}
+
+.property-wrapper .list-group-item{
+    border:none;
+    margin:10px 0px;
+}
+.property-wrapper .list-group-item span.active{
+    background-color: #47C3C6;
+}
+.property-wrapper .list-group-item span.round{
+    border-radius: 100%;
+    padding:10px;
+    margin:0px 15px;
+    display: inline-block;
+}
