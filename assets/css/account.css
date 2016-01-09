@@ -127,11 +127,98 @@ section#account-property .existing-property .prop-details .manage-prop i{
 /*
 add new property page
 */
+.prop-wrapper{
+    padding:20px;
+}
+.prop-wrapper .half-width-form-control {
+    display: inline-block;
+    width: 49%;
+    /*width: calc(50% - 2px);*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.prop-wrapper .input-group-btn:last-child>.btn{
+    height:33px;
+}
+.prop-wrapper .frm {
+    float: left;
+    width: 100%;
+}
+.input-group-btn select {
+    border-color: #ccc;
+margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#new-property-form .frm .option-input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 5.33333px;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  margin-right: 0.5rem;
+  z-index: 1000;
+}
+
+#new-property-form .frm .option-input:hover { background: #9faab7; }
+
+#new-property-form .frm .option-input:checked { background: #40e0d0; }
+
+#new-property-form .frm .option-input:checked::before {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  content: '\2714';
+  display: inline-block;
+  font-size: 10.66667px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#new-property-form .frm .option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+#new-property-form .frm .option-input.radio { border-radius: 50%; }
+
+#new-property-form .frm .option-input.radio::after { border-radius: 50%; }
+
+#new-property-form .frm .amenity-icon{
+    display: inline-block;
+    width: 20px;
+    margin: 10px 20px;
+}
+
+/*Desktop Styles*/
 .property-wrapper .list-existing{
-    display: block;
+    display: none;
 }
 .property-wrapper .add-new{
-    display: none;
+    display: block;
 }
 
 .property-wrapper .list-group-item{

@@ -624,6 +624,55 @@
                 $window.alert("Some error occurred. please contact your admin.");
 
             });
+
+            function validateNewPropertyFrom(){
+              var newPropForm = jQuery("#new-property-form");
+              jQuery(".frm").hide();
+              jQuery("#sf1").show();
+              jQuery(".open1").click(function() {
+                  jQuery(".frm").hide();
+                  jQuery("#sf2").show();
+                  jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+              });
+
+              jQuery(".open2").click(function() {
+                  jQuery(".frm").hide();
+                  jQuery("#sf3").show();
+                  jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+              });
+              
+              jQuery(".open3").click(function() {
+                  jQuery("#loader").show();
+                   setTimeout(function(){
+                     jQuery("#new-property-form").html('<h2>Thanks for your time.</h2>');
+                   }, 1000);
+                  return false;
+              });
+              
+              jQuery(".back2").click(function() {
+                jQuery(".frm").hide();
+                jQuery("#sf1").show();
+                jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
+              });
+
+              jQuery(".back3").click(function() {
+                jQuery(".frm").hide();
+                jQuery("#sf2").show();
+                jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
+              });
+
+              jQuery('#mobile-new-property-navigation').on('change', function(){
+                var selectedIndex = jQuery(this).prop('selectedIndex')+1;
+                jQuery(".frm").hide();
+                jQuery("#sf"+selectedIndex).show();
+                
+              }); 
+
+            }
+
+            if(jQuery('#new-property-form')){
+              validateNewPropertyFrom();
+            }
         }
 
         $scope.getProps();
@@ -707,6 +756,8 @@
         //if($star){
         //    $star.stars();
         //}
+
+
     
 
   }); 
@@ -724,7 +775,7 @@ function signUpGotoNextStep(stepid) {
 
     $.fn.stars = function() {
         return $(this).each(function() {
-            $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+            $(this).html(jQuery('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
         });
     }
 

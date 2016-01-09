@@ -1,60 +1,356 @@
 <div class="property-wrapper">
-	<div class="row list-existing">
-		<div class="list-property col-md-3">
-			<div class="list-property-icon">
-				<span><img src="assets/amentities/amenity-air_condition.png"></span>
-				<p>List your first property and start earning money</p>
-			</div>
-			<div class="list-property-text">List a new property</div>
-		</div>
-		<div class="existing-property col-md-7 col-md-offset-1">
-			<div class="list col-xs-12" ng-repeat="property in properties">
-				<div class="property-list-wrapper">
-					<img ng-src="{{property.cover_media.thumbnail_url}}" class="img-responsive">
-					<div class="prop-details">
-						<p class="room-heading">{{property.name}}</p>
-						<span class="stars">{{property.rating}}</span>
-						<p>Exact nightly price : $500</p>
-						<p>Minimum nightly price : $300</p>
-						<p class="manage-prop"><i class="fa fa-fw"></i>Manage Property</p>
-
-					</div>
-					<div class="prop-select pull-right">
-						<select class="form-control">
-							<option>Inactive</option>
-							<option>Active</option>
-						</select>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row add-new">
-		        <div class="row">
-
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item"><span class="active round">1</span>Category</a>
-                    <a href="#" class="list-group-item"><span class="round">2</span>Category</a>
-                    <a href="#" class="list-group-item"><span class="round">3</span>Category</a>
-                    <a href="#" class="list-group-item"><span class="round">4</span>Category</a>
-                    <a href="#" class="list-group-item"><span class="round">5</span>Category</a>
-                    <a href="#" class="list-group-item"><span class="round">6</span>Category</a>
-                </div>
+   <div class="row list-existing">
+      <div class="list-property col-md-3">
+         <div class="list-property-icon">
+            <span><img src="assets/amentities/amenity-air_condition.png"></span>
+            <p>List your first property and start earning money</p>
+         </div>
+         <div class="list-property-text">List a new property</div>
+      </div>
+      <div class="existing-property col-md-7 col-md-offset-1">
+         <div class="list col-xs-12" ng-repeat="property in properties">
+            <div class="property-list-wrapper">
+               <img ng-src="{{property.cover_media.thumbnail_url}}" class="img-responsive">
+               <div class="prop-details">
+                  <p class="room-heading">{{property.name}}</p>
+                  <span class="stars">{{property.rating}}</span>
+                  <p>Exact nightly price : $500</p>
+                  <p>Minimum nightly price : $300</p>
+                  <p class="manage-prop"><i class="fa fa-fw"></i>Manage Property</p>
+               </div>
+               <div class="prop-select pull-right">
+                  <select class="form-control">
+                     <option>Inactive</option>
+                     <option>Active</option>
+                  </select>
+               </div>
             </div>
-
-            <div class="col-md-9">
-
-               
-
-               
-
+         </div>
+      </div>
+   </div>
+   <div class="row add-new">
+      <div class="row">
+         <div class="visible-md col-md-3">
+            <div class="list-group">
+               <a href="#" class="list-group-item"><span class="active round">1</span>Category</a>
+               <a href="#" class="list-group-item"><span class="round">2</span>Category</a>
+               <a href="#" class="list-group-item"><span class="round">3</span>Category</a>
+               <a href="#" class="list-group-item"><span class="round">4</span>Category</a>
+               <a href="#" class="list-group-item"><span class="round">5</span>Category</a>
+               <a href="#" class="list-group-item"><span class="round">6</span>Category</a>
             </div>
-
-        </div>
-
-    
-	</div>
-	
+         </div>
+         <div class="col-sm-12 visible-xs">
+            <select class="form-control" id="mobile-new-property-navigation">
+               <option>Basic Information</option>
+               <option>Description & Photos</option>
+               <option>Location</option>
+               <option>Amenities</option>
+               <option>Pricing</option>
+               <option>Calendar</option>
+            </select>
+            <form name="newPropertyFrom" id="new-property-form">
+               <div id="sf1" class="frm">
+                  <h3>Property Information</h3>
+                  <fieldset class="form-group">
+                     <label for="exampleSelect1">Property type</label>
+                     <select class="form-control" id="exampleSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="others">Others</label>
+                     <input type="text" class="form-control" id="others">
+                  </fieldset>
+                  <hr />
+                  <fieldset class="form-group">
+                     <label for="accomodation">Accomodation</label>
+                     <input type="text" class="form-control" id="accomodation">
+                  </fieldset>
+                  <fieldset class="form-group half-width-form-control">
+                     <label for="bedroom">Betroom</label>
+                     <select class="form-control" id="bedroom">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="form-group half-width-form-control">
+                     <label for="beds">Beds</label>
+                     <select class="form-control" id="beds">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="bed-type">Bed Type</label>
+                     <select class="form-control" id="bed-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label>Check In</label>
+                        <div class="input-group">
+                           <input type="text" class="form-control">
+                           <span class="input-group-btn">
+                              <select class="btn">
+                                 <option>AM</option>
+                                 <option>PM</option>
+                              </select>
+                           </span>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset>
+                     <div class="form-group">
+                        <label>Check Out</label>
+                        <div class="input-group">
+                           <input type="text" class="form-control">
+                           <span class="input-group-btn">
+                              <select class="btn">
+                                 <option>AM</option>
+                                 <option>PM</option>
+                              </select>
+                           </span>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <button type="button" class="open1 btn btn-primary pull-right">Next</button>
+               </div>
+               <div id="sf2" class="frm">
+                  <h3>Description</h3>
+                  <fieldset class="form-group">
+                     <label for="property-name">Property Name</label>
+                     <input type="text" class="form-control" id="property-name">
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="description">Description</label>
+                     <textarea type="text" class="form-control" id="description"></textarea>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="description">Property Images</label>
+                     <p>Beautiful photographs help draw travellers to your property.</p>
+                     <img src="" ng-show="sbaProj.prop_pic[1]" id="prop_pic_1" />
+                     <button ng-hide="sbaProj.prop_pic[1]"  type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '1')"  class="btn-img btn btn-info " accept="image/*"  ngf-max-size="20MB"   >
+                        Add Photos
+                        <span style=""  class="progress" ng-show="f[1].progress >= 0">
+                           <div style="width:{{f[1].progress}}%"  ng-bind="f[1].progress + '%'"></div>
+                        </span>
+                     </button>
+                  </fieldset>
+                  <button type="button" class="btn btn-primary pull-left back2">Next</button>
+                  <button type="button" class="btn btn-primary pull-right open2">Next</button>
+               </div>
+               <div id="sf3" class="frm">
+                  <h3>Property Address</h3>
+                  <fieldset class="form-group">
+                     <label for="country">Country</label>
+                     <select class="form-control" id="country">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="address1">Address Line 1</label>
+                     <input type="text" class="form-control" id="address1">
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="address2">Address Line 2</label>
+                     <input type="text" class="form-control" id="address2">
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="city">City</label>
+                     <input type="text" class="form-control" id="city">
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="state">States</label>
+                     <select class="form-control" id="state">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="zip">ZipCode</label>
+                     <input type="text" class="form-control" id="zip">
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="location-map">Location on map</label>
+                     <label id="display-location">Display Location here</label>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <label for="map-description">Description</label>
+                     <textarea type="text" class="form-control" id="map-description"></textarea>
+                  </fieldset>
+                  <button class="btn btn-primary open3" type="button">Submit </button>
+               </div>
+               <div id="sf4" class="frm">
+                  <h4>Welcome Package</h4>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="coffee" id="coffee" value="coffee" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-coffee.png"></span>
+                     Coffee
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label>
+                     <input type="radio" class="option-input radio" name="wine" id="wine" value="wine" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-wine.png"></span>
+                     Wine
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label>
+                     <input type="radio" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-fruit_juice.png"></span>
+                     Fruit Juice
+                     </label>
+                  </fieldset>
+                  <fieldset><label>
+                     <input type="radio" class="option-input radio" name="tea" id="tea" value="tea" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-tea.png"></span>
+                     Tea
+                     </label>
+                  </fieldset>
+                  <h4>Provided to guest</h4>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="washer" id="washer" value="washer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-washer.png"></span>
+                     Washer
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-toiletries.png"></span>
+                     Toiletries
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="shower" id="shower" value="shower" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-shower.png"></span>
+                     Shower
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="dryer" id="dryer" value="dryer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-dryer.png"></span>
+                     Dryer
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="towels" id="towels" value="towels" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-towels.png"></span>
+                     Towels
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-hair_dryer.png"></span>
+                     Hair Dryer
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-breakfast.png"></span>
+                     Break Fast
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-electric_iron.png"></span>
+                     Electric Iron
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-bathtub.png"></span>
+                     Bathtub
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-alarm_clock.png"></span>
+                     Alarm Clock
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-linen_bed_sheet.png"></span>
+                     Linens
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-local_long_distance_ call.png"></span>
+                     Local/long-distance calls
+                     </label>
+                  </fieldset>
+                  <h4>Kichen</h4>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="fridge" id="fridge" value="fridge" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-fridge.png"></span>
+                     Refrigerator
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-coffee machine.png"></span>
+                     Coffee Machine
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-hand_mixer.png"></span>
+                     Hand Mixer
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-smoke detector.png"></span>
+                     Smoke detector
+                     </label>
+                  </fieldset>
+               </div>
+            </form>
+         </div>
+         <div class="col-md-9 col-sm-12">
+         </div>
+      </div>
+   </div>
 </div>
