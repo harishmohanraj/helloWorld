@@ -212,8 +212,6 @@ margin-top: 0px;
     width: 20px;
     margin: 10px 20px;
 }
-
-/*Desktop Styles*/
 .property-wrapper .list-existing{
     display: none;
 }
@@ -233,4 +231,13 @@ margin-top: 0px;
     padding:10px;
     margin:0px 15px;
     display: inline-block;
+}
+
+/*Desktop Styles*/
+@media screen and (min-width: 1004px){
+    #new-property-form .frm .form-group.inline-desk {
+        margin-bottom: 15px;
+        display: inline-block;
+        width: 48%;
+    }
 }

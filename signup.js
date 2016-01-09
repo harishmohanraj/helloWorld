@@ -629,13 +629,20 @@
               var newPropForm = jQuery("#new-property-form");
               jQuery(".frm").hide();
               jQuery("#sf1").show();
-              jQuery(".open1").click(function() {
+
+              jQuery(".next").click(function() {
                   jQuery(".frm").hide();
-                  jQuery("#sf2").show();
+                  jQuery("#sf"+jQuery(this).attr('id').split('_')[1]).show();
                   jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
               });
 
-              jQuery(".open2").click(function() {
+              jQuery(".back").click(function() {
+                jQuery(".frm").hide();
+                jQuery("#sf"+jQuery(this).attr('id').split('_')[1]).show();
+                jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
+              });
+
+              /*jQuery(".open2").click(function() {
                   jQuery(".frm").hide();
                   jQuery("#sf3").show();
                   jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
@@ -647,19 +654,15 @@
                      jQuery("#new-property-form").html('<h2>Thanks for your time.</h2>');
                    }, 1000);
                   return false;
-              });
+              });*/
               
-              jQuery(".back2").click(function() {
-                jQuery(".frm").hide();
-                jQuery("#sf1").show();
-                jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-              });
+              
 
-              jQuery(".back3").click(function() {
+              /*jQuery(".back3").click(function() {
                 jQuery(".frm").hide();
                 jQuery("#sf2").show();
                 jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-              });
+              });*/
 
               jQuery('#mobile-new-property-navigation').on('change', function(){
                 var selectedIndex = jQuery(this).prop('selectedIndex')+1;

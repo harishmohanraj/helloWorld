@@ -30,7 +30,7 @@
    </div>
    <div class="row add-new">
       <div class="row">
-         <div class="visible-md col-md-3">
+         <div class="hidden-sm col-md-2">
             <div class="list-group">
                <a href="#" class="list-group-item"><span class="active round">1</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">2</span>Category</a>
@@ -40,8 +40,8 @@
                <a href="#" class="list-group-item"><span class="round">6</span>Category</a>
             </div>
          </div>
-         <div class="col-sm-12 visible-xs">
-            <select class="form-control" id="mobile-new-property-navigation">
+         <div class="col-sm-12 col-md-9">
+            <select class="form-control visible-xs" id="mobile-new-property-navigation">
                <option>Basic Information</option>
                <option>Description & Photos</option>
                <option>Location</option>
@@ -52,7 +52,7 @@
             <form name="newPropertyFrom" id="new-property-form">
                <div id="sf1" class="frm">
                   <h3>Property Information</h3>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="exampleSelect1">Property type</label>
                      <select class="form-control" id="exampleSelect1">
                         <option>1</option>
@@ -62,16 +62,16 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="others">Others</label>
                      <input type="text" class="form-control" id="others">
                   </fieldset>
                   <hr />
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="accomodation">Accomodation</label>
                      <input type="text" class="form-control" id="accomodation">
                   </fieldset>
-                  <fieldset class="form-group half-width-form-control">
+                  <fieldset class="form-group inline-desk half-width-form-control">
                      <label for="bedroom">Betroom</label>
                      <select class="form-control" id="bedroom">
                         <option>1</option>
@@ -81,7 +81,7 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-                  <fieldset class="form-group half-width-form-control">
+                  <fieldset class="form-group inline-desk half-width-form-control">
                      <label for="beds">Beds</label>
                      <select class="form-control" id="beds">
                         <option>1</option>
@@ -91,7 +91,7 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="bed-type">Bed Type</label>
                      <select class="form-control" id="bed-type">
                         <option>1</option>
@@ -101,8 +101,8 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-                  <fieldset>
-                     <div class="form-group">
+                  <fieldset class="form-group inline-desk">
+                     <div class="">
                         <label>Check In</label>
                         <div class="input-group">
                            <input type="text" class="form-control">
@@ -115,8 +115,8 @@
                         </div>
                      </div>
                   </fieldset>
-                  <fieldset>
-                     <div class="form-group">
+                  <fieldset class="form-group inline-desk">
+                     <div class="">
                         <label>Check Out</label>
                         <div class="input-group">
                            <input type="text" class="form-control">
@@ -129,7 +129,7 @@
                         </div>
                      </div>
                   </fieldset>
-                  <button type="button" class="open1 btn btn-primary pull-right">Next</button>
+                  <button id="next_2" type="button" class="next btn btn-primary pull-right">Next</button>
                </div>
                <div id="sf2" class="frm">
                   <h3>Description</h3>
@@ -152,8 +152,8 @@
                         </span>
                      </button>
                   </fieldset>
-                  <button type="button" class="btn btn-primary pull-left back2">Next</button>
-                  <button type="button" class="btn btn-primary pull-right open2">Next</button>
+                  <button id="back_1" type="button" class="btn btn-primary pull-left back">Next</button>
+                  <button id="next_3" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf3" class="frm">
                   <h3>Property Address</h3>
@@ -175,11 +175,11 @@
                      <label for="address2">Address Line 2</label>
                      <input type="text" class="form-control" id="address2">
                   </fieldset>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="city">City</label>
                      <input type="text" class="form-control" id="city">
                   </fieldset>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="state">States</label>
                      <select class="form-control" id="state">
                         <option>1</option>
@@ -189,7 +189,7 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="zip">ZipCode</label>
                      <input type="text" class="form-control" id="zip">
                   </fieldset>
@@ -201,303 +201,422 @@
                      <label for="map-description">Description</label>
                      <textarea type="text" class="form-control" id="map-description"></textarea>
                   </fieldset>
-                  <button class="btn btn-primary open3" type="button">Submit </button>
+                  <button id="back_2" type="button" class="btn btn-primary pull-left back">Prev</button>
+                  <button id="next_4" type="button" class="btn btn-primary pull-right next">Next</button>
+                  <!--  -->
                </div>
                <div id="sf4" class="frm">
+                  <div class="row">
                   <h4>Welcome Package</h4>
-                  <fieldset>
+                  
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="coffee" id="coffee" value="coffee" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-coffee.png"></span>
                      Coffee
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label>
                      <input type="radio" class="option-input radio" name="wine" id="wine" value="wine" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-wine.png"></span>
                      Wine
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label>
                      <input type="radio" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-fruit_juice.png"></span>
                      Fruit Juice
                      </label>
-                  </fieldset>
-                  <fieldset><label>
+                  </fieldset >
+                  <fieldset class="col-md-4"><label>
                      <input type="radio" class="option-input radio" name="tea" id="tea" value="tea" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-tea.png"></span>
                      Tea
                      </label>
                   </fieldset>
+                  </div>
+                  <div class="row">
                   <h4>Provided to guest</h4>
-                  <fieldset>
+                  
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="washer" id="washer" value="washer" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-washer.png"></span>
                      Washer
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-toiletries.png"></span>
                      Toiletries
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="shower" id="shower" value="shower" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-shower.png"></span>
                      Shower
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="dryer" id="dryer" value="dryer" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-dryer.png"></span>
                      Dryer
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="towels" id="towels" value="towels" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-towels.png"></span>
                      Towels
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-hair_dryer.png"></span>
                      Hair Dryer
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-breakfast.png"></span>
                      Break Fast
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-electric_iron.png"></span>
                      Electric Iron
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-bathtub.png"></span>
                      Bathtub
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-alarm_clock.png"></span>
                      Alarm Clock
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-linen_bed_sheet.png"></span>
                      Linens
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-local_long_distance_ call.png"></span>
                      Local/long-distance calls
                      </label>
                   </fieldset>
+                  </div>
+                  <div class="row">
                   <h4>Kichen</h4>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="fridge" id="fridge" value="fridge" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-fridge.png"></span>
                      Refrigerator
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-coffee machine.png"></span>
                      Coffee Machine
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-hand_mixer.png"></span>
                      Hand Mixer
                      </label>
                   </fieldset>
-                  <fieldset>
+                  <fieldset class="col-md-4">
                      <label class="amenity">
                      <input type="radio" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-smoke detector.png"></span>
                      Smoke detector
                      </label>
                   </fieldset>
+                  </div>
+                  <div class="row">
                   <h4>Facilities</h4>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="parking" id="parking" value="parking" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-parking.png"></span>
-	Parking
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="garden" id="garden" value="garden" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-garden.png"></span>
-	Garden
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="terrace" id="terrace" value="terrace" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-terrace.png"></span>
-	Terrace
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="pool" id="pool" value="pool" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-pool.png"></span>
-	Pool
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="gym" id="gym" value="gym" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-gym.png"></span>
-	Gym
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-hospital_nearby.png"></span>
-	Hospital Nearby
-	</label>
-</fieldset>
-<h4>Entertainment and electronics</h4>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="wifi" id="wifi" value="wifi" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-wifi.png"></span>
-	WiFi
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-wired_network.png"></span>
-	Wired network
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-dvd_player.png"></span>
-	DVD Player
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="tv" id="tv" value="tv" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-tv.png"></span>
-	Tv
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="game_player" id="game_player" value="game_player" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-game_player.png"></span>
-	Gaming console
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
-	Printer
-	</label>
-</fieldset>
-<h4>Heating and cooling</h4>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-indoor fireplace.png"></span>
-	Indore fireplace
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="heating" id="heating" value="heating" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-heating.png"></span>
-	Heating
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-air_condition.png"></span>
-	Air conditioning
-	</label>
-</fieldset>
-<h4>Suitability</h4>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-smoke allowed.png"></span>
-	Smoke allowed
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-pet friendly.png"></span>
-	Pet-friendly
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="elevator" id="elevator" value="elevator" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-elevator.png"></span>
-	Elevator
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-wheelchair.png"></span>
-	Wheelchair-accessible
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-medicine cabinet.png"></span>
-	Medicine cabinet
-	</label>
-</fieldset>
-<fieldset>
-	<label class="amenity">
-	<input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
-	<span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
-	Printer
-	</label>
-</fieldset>
+                  
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="parking" id="parking" value="parking" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-parking.png"></span>
+                     Parking
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="garden" id="garden" value="garden" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-garden.png"></span>
+                     Garden
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="terrace" id="terrace" value="terrace" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-terrace.png"></span>
+                     Terrace
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="pool" id="pool" value="pool" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-pool.png"></span>
+                     Pool
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="gym" id="gym" value="gym" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-gym.png"></span>
+                     Gym
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-hospital_nearby.png"></span>
+                     Hospital Nearby
+                     </label>
+                  </fieldset>
+                  </div>
+                  <div class="row">
+                  <h4>Entertainment and electronics</h4>
+                  
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="wifi" id="wifi" value="wifi" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-wifi.png"></span>
+                     WiFi
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-wired_network.png"></span>
+                     Wired network
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-dvd_player.png"></span>
+                     DVD Player
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="tv" id="tv" value="tv" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-tv.png"></span>
+                     Tv
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="game_player" id="game_player" value="game_player" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-game_player.png"></span>
+                     Gaming console
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
+                     Printer
+                     </label>
+                  </fieldset>
+                  </div>
+                  <div class="row">
+                  <h4>Heating and cooling</h4>
+                  
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-indoor fireplace.png"></span>
+                     Indore fireplace
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="heating" id="heating" value="heating" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-heating.png"></span>
+                     Heating
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-air_condition.png"></span>
+                     Air conditioning
+                     </label>
+                  </fieldset>
+                  </div>
+                  <div class="row">
+                  <h4>Suitability</h4>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-smoke allowed.png"></span>
+                     Smoke allowed
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-pet friendly.png"></span>
+                     Pet-friendly
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="elevator" id="elevator" value="elevator" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-elevator.png"></span>
+                     Elevator
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-wheelchair.png"></span>
+                     Wheelchair-accessible
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-medicine cabinet.png"></span>
+                     Medicine cabinet
+                     </label>
+                  </fieldset>
+                  <fieldset class="col-md-4">
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
+                     <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
+                     Printer
+                     </label>
+                  </fieldset>
+                  </div>
+                  <button id="back_3" type="button" class="btn btn-primary pull-left back">Prev</button>
+                  <button id="next_5" type="button" class="btn btn-primary pull-right next">Next</button>
+               </div>
+               <div id="sf5" class="frm">
+               <h3>Base Price</h3>
+                  <fieldset class="form-group inline-desk">
+                     <label for="nightly-price">Preferred nightly price</label>
+                     <input type="text" class="form-control" id="nightly-price">
+                  </fieldset>
+                  <fieldset class="form-group inline-desk">
+                     <label for="currency">Currency</label>
+                     <select class="form-control" id="currency">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset>
+                  <label class="allow_dynamic">Allow dynamic pricing</label>                     
+                  </fieldset>
+                  <fieldset>
+                  	<label class="amenity">
+                     <input type="radio" class="option-input radio" name="" id="" value="yes">Yes</label>
+                     </label>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="" id="" value="No">No</label>
+                     </label>
+                  </fieldset>
+                  <fieldset class="inline-desk display-if-dynamic form-group">
+                     <label for="minimum-nightly-fee">Minimum nightly fee</label>
+                     <input type="text" class="form-control" id="minimum-nightly-fee">
+                  </fieldset>
+                  <fieldset class="inline-desk display-if-dynamic form-group">
+                     <label for="duration">Duration</label>
+                     <input type="text" class="form-control" id="duration">
+                  </fieldset>
+                  <fieldset class="inline-desk form-group">
+                     <label for="cleaning-fee">Cleaning fee</label>
+                     <input type="text" class="form-control" id="cleaning-fee">
+                  </fieldset>
+                  <hr/>
+                  <h4>Deposit</h4>
+                  <fieldset>
+                  	 <label>Security Deposit?</label>                     
+                  </fieldset>
+                  <fieldset>
+                  	<label class="amenity">
+                     <input type="radio" class="option-input radio" name="" id="" value="yes">Yes</label>
+                     </label>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="" id="" value="No">No</label>
+                     </label>
+                  </fieldset>
+                  <hr />
+                  <h4>Other</h4>
+                  <fieldset class="inline-desk form-group">
+                     <label for="cancellation-policy">Cancellation Policy</label>
+                     <select class="form-control" id="cancellation-policy">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
+                  <fieldset class="inline-desk form-group">
+                     <label for="instane-booking">Allow instant Booking</label>
+                     <select class="form-control" id="instane-booking">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                     </select>
+                  </fieldset>
 
+               	<button id="back_4" type="button" class="btn btn-primary pull-left back">Prev</button>
+                  <button id="next_6" type="button" class="btn btn-primary pull-right next">Next</button>
+               </div>
+               <div id="sf6" class="frm">
+               		<h4>Property Available</h4>
+               		<fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="always" id="always" value="always" >
+                     Always Available
+                     </label>
+                  </fieldset>
+                  <fieldset>
+                     <label class="amenity">
+                     <input type="radio" class="option-input radio" name="selected" id="selected" value="selected" >
+                     Choose your date
+                     </label>
+                  </fieldset>
+               		<button id="back_5" type="button" class="btn btn-primary pull-left back">Prev</button>
+
+                   <button class="btn btn-primary pull-right save-draft" type="submit">Save as draft </button>
+                   <button class="btn btn-primary pull-right save-publish" type="submit">Save and Publish </button>
                </div>
             </form>
          </div>
