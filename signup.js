@@ -676,6 +676,34 @@
             if(jQuery('#new-property-form')){
               validateNewPropertyFrom();
             }
+            // validate and submit form
+            $scope.formData = {};
+
+
+
+           // process the form
+            $scope.processForm = function() {
+              console.log($scope.formData);
+              debugger;
+               $http({
+                method  : 'POST',
+                url     : 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/create',
+                data    : $.param($scope.formData),  // pass in data as strings
+                headers : {   'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token }  // set the headers so angular passing info as form data (not request payload)
+               })
+               .success(function(data) {
+                  console.log(data);
+
+                  if (!data.success) {
+                    // if not successful, bind errors to error variables
+                    $scope.errorName = data.errors.name;
+                    $scope.errorSuperhero = data.errors.superheroAlias;
+                  } else {
+                    // if successful, bind success message to message
+                    $scope.message = data.message;
+                  }
+                });
+              };
         }
 
         $scope.getProps();
@@ -684,8 +712,29 @@
 
     app.controller("reservationsController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
 
-        // create a message to display in our view
-        $scope.message = 'Reservation Page Goes Here!';
+        jQuery('#reservation-filter').on('change', function(){
+          var selectedValue = jQuery(this).val();
+          if(selectedValue === 'previous'){
+            jQuery('.reservation-wrapper .thumbnail .guest.previous').addClass('inline');
+          }else{
+            jQuery('.reservation-wrapper .thumbnail .guest.previous').removeClass('inline');
+          }
+        }); 
+        $('.open-popup-signup').magnificPopup({
+      type:'inline',
+      midClick: true ,
+      callbacks: {
+        open: function() {
+            $('html').css({'overflow': 'hidden','height': '100%'});
+        $('body').css({'overflow': 'hidden','height': '100%'});
+        },
+        close: function() {
+          $('html').css({'overflow': 'auto','height': 'auto'});
+        $('body').css({'overflow': 'auto','height': 'auto'});
+        }
+      }
+    });
+        
 
     }]);
 

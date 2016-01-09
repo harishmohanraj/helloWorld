@@ -1,5 +1,91 @@
-<div class="jumbotron text-center">
-	<h1>Reservations Page</h1>
-
-	<p>{{ message }}</p>
+<div class="reservation-wrapper">
+<div class="row thumbnail">
+     <select class="form-control ng-pristine ng-valid ng-touched" id="reservation-filter">
+        <option value="upcoming">Upcoming</option>
+        <option value="previous">Previous</option>
+     </select>
 </div>
+<div class="row">
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="http://placehold.it/500x300" alt="">
+            <div class="caption">
+                <h4>First Product</h4>
+                <div class="ratings">
+	                <span class="private">PRIVATE</span>
+	                <p style="display:inline-block;">
+	                    <span class="glyphicon glyphicon-star"></span>
+	                    <span class="glyphicon glyphicon-star"></span>
+	                    <span class="glyphicon glyphicon-star"></span>
+	                    <span class="glyphicon glyphicon-star"></span>
+	                    <span class="glyphicon glyphicon-star"></span>
+	                </p>
+	            </div>
+                <p>description text</p>
+                <p class="inline">Nights: <span>1</span></p>
+                <p class="inline">Guests: <span>1</span></p>
+                <p>Reservation Cost: <span>1</span></p>
+                <p>Booking number: <span>1</span></p>
+                <p>Customer: <span>Lia</span></p>
+            </div>
+            <div class="calendar-widget-wrapper col-sm-12">
+            	<div class="calendar-widget col-sm-5">
+            		<p class="check-in">Check in</p>
+            		<p class="date">23 JUL</p>
+            		<p class="time">Friday 12:00 PM</p>
+            	</div>
+            	<div class="calendar-widget col-sm-4 col-sm-offset-3">
+            		<p class="check-in">Check Out</p>
+            		<p class="date">23 JUL</p>
+            		<p class="time">Friday 12:00 PM</p>
+            	</div>
+            </div>
+            <div class="guest">
+            	<a href="#">Guest information <i class="fa fa-angle-right"></i></a>
+            	<a href="#">Message history <i class="fa fa-angle-right"></i></a>	
+            </div>
+            <div class="guest previous">
+            	<a href="#">Leave a review <i class="fa fa-angle-right"></i></a>
+            	<a href="#">Make a claim <i class="fa fa-angle-right"></i></a>
+            	<a href="#popup-signup" class="open-popup-signup"><div class="btn signupbutton">Sign Up</div></a>	
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="popup-signup" class="container mfp-hide" style="height:480px;width:760px;">
+		<div class="text-right closepopup close-mag-popup">×</div>
+			
+			<div class="row">
+				<div class="col-sm-6 hidden-xs" style="height:480px;background: url(assets/images/life-style-2.png) center center;background-size:cover;">
+					&nbsp;
+				</div>
+				<div class="col-sm-6 alt-bg text-left" style="height:480px;padding:40px;font-size:13px">
+					
+
+					<div class="title-size-4  font-alt  m-t-10 m-b-30 align-left">
+						Download the app and <b>travel more</b>
+					</div>
+					<div class="p-t-60 p-b-10">
+						Send me a free download link via text message
+					</div>
+					<div>
+						<form class="">
+						<div class="form-group" style="white-space:nowrap;">
+							<input class="form-control input-lg" type="text" placeholder="US +1 xxx-xxx-xxxx" style="border: #fff;">
+							<button type="submit" class="btn  bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;width: 100%;">Send</button>
+						</div>
+						</form>
+						
+					</div>
+					<div class="p-t-10 p-b-10">
+						-or-
+					</div>
+					<img src="assets/images/appstoreicon.png" class="appstoreicon">
+
+				</div>
+
+			</div>
+
+		</div>
