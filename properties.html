@@ -54,7 +54,7 @@
                   <h3>Property Information</h3>
                   <fieldset class="form-group inline-desk">
                      <label for="exampleSelect1">Property type</label>
-                     <select class="form-control" id="exampleSelect1">
+                     <select class="form-control" id="exampleSelect1"  ng-model="formData.type">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -64,16 +64,16 @@
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="others">Others</label>
-                     <input type="text" class="form-control" id="others">
+                     <input type="text" class="form-control" id="others" ng-model="formData.others">
                   </fieldset>
                   <hr />
                   <fieldset class="form-group inline-desk">
                      <label for="accomodation">Accomodation</label>
-                     <input type="text" class="form-control" id="accomodation">
+                     <input type="text" class="form-control" id="accomodation" ng-model="formData.accomodates_num">
                   </fieldset>
                   <fieldset class="form-group inline-desk half-width-form-control">
                      <label for="bedroom">Betroom</label>
-                     <select class="form-control" id="bedroom">
+                     <select class="form-control" id="bedroom" ng-model="formData.num_bedrooms">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -83,7 +83,7 @@
                   </fieldset>
                   <fieldset class="form-group inline-desk half-width-form-control">
                      <label for="beds">Beds</label>
-                     <select class="form-control" id="beds">
+                     <select class="form-control" id="beds" ng-model="formData.num_beds">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -93,7 +93,7 @@
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="bed-type">Bed Type</label>
-                     <select class="form-control" id="bed-type">
+                     <select class="form-control" id="bed-type" ng-model="formData.num_type">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -105,7 +105,7 @@
                      <div class="">
                         <label>Check In</label>
                         <div class="input-group">
-                           <input type="text" class="form-control">
+                           <input type="text" class="form-control" ng-model="formData.check_in_time">
                            <span class="input-group-btn">
                               <select class="btn">
                                  <option>AM</option>
@@ -119,7 +119,7 @@
                      <div class="">
                         <label>Check Out</label>
                         <div class="input-group">
-                           <input type="text" class="form-control">
+                           <input type="text" class="form-control" ng-model="formData.check_out_time">
                            <span class="input-group-btn">
                               <select class="btn">
                                  <option>AM</option>
@@ -135,11 +135,11 @@
                   <h3>Description</h3>
                   <fieldset class="form-group">
                      <label for="property-name">Property Name</label>
-                     <input type="text" class="form-control" id="property-name">
+                     <input type="text" class="form-control" id="property-name" ng-model="formData.name">
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="description">Description</label>
-                     <textarea type="text" class="form-control" id="description"></textarea>
+                     <textarea type="text" class="form-control" id="description" ng-model="formData.description"></textarea>
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="description">Property Images</label>
@@ -159,7 +159,7 @@
                   <h3>Property Address</h3>
                   <fieldset class="form-group">
                      <label for="country">Country</label>
-                     <select class="form-control" id="country">
+                     <select class="form-control" id="country" ng-model="formData.country">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -169,19 +169,19 @@
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="address1">Address Line 1</label>
-                     <input type="text" class="form-control" id="address1">
+                     <input type="text" class="form-control" id="address1" ng-model="formData.address_street_1">
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="address2">Address Line 2</label>
-                     <input type="text" class="form-control" id="address2">
+                     <input type="text" class="form-control" id="address2" ng-model="formData.address_street_2">
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="city">City</label>
-                     <input type="text" class="form-control" id="city">
+                     <input type="text" class="form-control" id="city" ng-model="formData.city">
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="state">States</label>
-                     <select class="form-control" id="state">
+                     <select class="form-control" id="state" ng-model="formData.state">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -191,7 +191,7 @@
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="zip">ZipCode</label>
-                     <input type="text" class="form-control" id="zip">
+                     <input type="text" class="form-control" id="zip" ng-model="formData.zip_code">
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="location-map">Location on map</label>
@@ -211,27 +211,27 @@
                   
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="coffee" id="coffee" value="coffee" >
+                     <input type="radio" class="option-input radio" name="coffee" id="coffee" value="coffee" ng-model="formData.amenity_coffee">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-coffee.png"></span>
                      Coffee
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label>
-                     <input type="radio" class="option-input radio" name="wine" id="wine" value="wine" >
+                     <input type="radio" class="option-input radio" name="wine" id="wine" value="wine"  ng-model="formData.amenity_wine">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-wine.png"></span>
                      Wine
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label>
-                     <input type="radio" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" >
+                     <input type="radio" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" ng-model="formData.amenity_juice">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-fruit_juice.png"></span>
                      Fruit Juice
                      </label>
                   </fieldset >
                   <fieldset class="col-md-4"><label>
-                     <input type="radio" class="option-input radio" name="tea" id="tea" value="tea" >
+                     <input type="radio" class="option-input radio" name="tea" id="tea" value="tea" ng-model="formData.amenity_tea">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-tea.png"></span>
                      Tea
                      </label>
@@ -242,84 +242,84 @@
                   
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="washer" id="washer" value="washer" >
+                     <input type="radio" class="option-input radio" name="washer" id="washer" value="washer" ng-model="formData.amenity_washer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-washer.png"></span>
                      Washer
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" >
+                     <input type="radio" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" ng-model="formData.amenity_toiletries">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-toiletries.png"></span>
                      Toiletries
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="shower" id="shower" value="shower" >
+                     <input type="radio" class="option-input radio" name="shower" id="shower" value="shower" ng-model="formData.amenity_shower">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-shower.png"></span>
                      Shower
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="dryer" id="dryer" value="dryer" >
+                     <input type="radio" class="option-input radio" name="dryer" id="dryer" value="dryer" ng-model="formData.amenity_dryer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-dryer.png"></span>
                      Dryer
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="towels" id="towels" value="towels" >
+                     <input type="radio" class="option-input radio" name="towels" id="towels" value="towels" ng-model="formData.amenity_towels">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-towels.png"></span>
                      Towels
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" >
+                     <input type="radio" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" ng-model="formData.amenity_hair_dryer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-hair_dryer.png"></span>
                      Hair Dryer
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" >
+                     <input type="radio" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" ng-model="formData.amenity_breakfast">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-breakfast.png"></span>
                      Break Fast
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" >
+                     <input type="radio" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" ng-model="formData.amenity_iron">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-electric_iron.png"></span>
                      Electric Iron
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" >
+                     <input type="radio" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" ng-model="formData.amenity_bathtub">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-bathtub.png"></span>
                      Bathtub
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" >
+                     <input type="radio" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" ng-model="formData.amenity_alarm_clock">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-alarm_clock.png"></span>
                      Alarm Clock
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" >
+                     <input type="radio" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" ng-model="formData.amenity_sheets">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-linen_bed_sheet.png"></span>
                      Linens
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call" >
+                     <input type="radio" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-local_long_distance_ call.png"></span>
                      Local/long-distance calls
                      </label>
@@ -329,28 +329,28 @@
                   <h4>Kichen</h4>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="fridge" id="fridge" value="fridge" >
+                     <input type="radio" class="option-input radio" name="fridge" id="fridge" value="fridge" ng-model="formData.amenity_fridge">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-fridge.png"></span>
                      Refrigerator
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" >
+                     <input type="radio" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" ng-model="formData.amenity_coffee_machine">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-coffee machine.png"></span>
                      Coffee Machine
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" >
+                     <input type="radio" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" ng-model="formData.amenity_mixer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-hand_mixer.png"></span>
                      Hand Mixer
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" >
+                     <input type="radio" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" ng-model="formData.amenity_smoke_detector">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-smoke detector.png"></span>
                      Smoke detector
                      </label>
@@ -361,42 +361,42 @@
                   
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="parking" id="parking" value="parking" >
+                     <input type="radio" class="option-input radio" name="parking" id="parking" value="parking" ng-model="formData.amenity_parking">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-parking.png"></span>
                      Parking
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="garden" id="garden" value="garden" >
+                     <input type="radio" class="option-input radio" name="garden" id="garden" value="garden" ng-model="formData.amenity_garden">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-garden.png"></span>
                      Garden
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="terrace" id="terrace" value="terrace" >
+                     <input type="radio" class="option-input radio" name="terrace" id="terrace" value="terrace" ng-model="formData.amenity_terrace">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-terrace.png"></span>
                      Terrace
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="pool" id="pool" value="pool" >
+                     <input type="radio" class="option-input radio" name="pool" id="pool" value="pool"  ng-model="formData.amenity_pool" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-pool.png"></span>
                      Pool
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="gym" id="gym" value="gym" >
+                     <input type="radio" class="option-input radio" name="gym" id="gym" value="gym" ng-model="formData.amenity_gym">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-gym.png"></span>
                      Gym
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" >
+                     <input type="radio" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" ng-model="formData.amenity_hospital_nearby">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-hospital_nearby.png"></span>
                      Hospital Nearby
                      </label>
@@ -407,42 +407,42 @@
                   
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="wifi" id="wifi" value="wifi" >
+                     <input type="radio" class="option-input radio" name="wifi" id="wifi" value="wifi" ng-model="formData.amenity_hospital_wifi" >
                      <span class="amenity-icon"><img src="assets/amentities/amenity-wifi.png"></span>
                      WiFi
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" >
+                     <input type="radio" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" ng-model="formData.amenity_internet">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-wired_network.png"></span>
                      Wired network
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" >
+                     <input type="radio" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" ng-model="formData.amenity_dvd_player">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-dvd_player.png"></span>
                      DVD Player
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="tv" id="tv" value="tv" >
+                     <input type="radio" class="option-input radio" name="tv" id="tv" value="tv" ng-model="formData.amenity_tv">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-tv.png"></span>
                      Tv
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="game_player" id="game_player" value="game_player" >
+                     <input type="radio" class="option-input radio" name="game_player" id="game_player" value="game_player" ng-model="formData.amenity_game_player">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-game_player.png"></span>
                      Gaming console
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
+                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
                      Printer
                      </label>
@@ -453,21 +453,21 @@
                   
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" >
+                     <input type="radio" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" ng-model="formData.amenity_fireplace">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-indoor fireplace.png"></span>
                      Indore fireplace
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="heating" id="heating" value="heating" >
+                     <input type="radio" class="option-input radio" name="heating" id="heating" value="heating" ng-model="formData.amenity_heating">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-heating.png"></span>
                      Heating
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" >
+                     <input type="radio" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" ng-model="formData.amenity_ac">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-air_condition.png"></span>
                      Air conditioning
                      </label>
@@ -477,42 +477,42 @@
                   <h4>Suitability</h4>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" >
+                     <input type="radio" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" ng-model="formData.amenity_smoking">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-smoke allowed.png"></span>
                      Smoke allowed
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" >
+                     <input type="radio" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" ng-model="formData.amenity_pets">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-pet friendly.png"></span>
                      Pet-friendly
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="elevator" id="elevator" value="elevator" >
+                     <input type="radio" class="option-input radio" name="elevator" id="elevator" value="elevator" ng-model="formData.amenity_elevator">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-elevator.png"></span>
                      Elevator
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" >
+                     <input type="radio" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" ng-model="formData.amenity_wheelchair_accessible">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-wheelchair.png"></span>
                      Wheelchair-accessible
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" >
+                     <input type="radio" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" ng-model="formData.amenity_medicine_cabinet">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-medicine cabinet.png"></span>
                      Medicine cabinet
                      </label>
                   </fieldset>
                   <fieldset class="col-md-4">
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" >
+                     <input type="radio" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
                      <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
                      Printer
                      </label>
@@ -529,7 +529,7 @@
                   </fieldset>
                   <fieldset class="form-group inline-desk">
                      <label for="currency">Currency</label>
-                     <select class="form-control" id="currency">
+                     <select class="form-control" id="currency" ng-model="formData.currency">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -542,15 +542,15 @@
                   </fieldset>
                   <fieldset>
                   	<label class="amenity">
-                     <input type="radio" class="option-input radio" name="" id="" value="yes">Yes</label>
+                     <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.dynamic_pricing">Yes</label>
                      </label>
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="" id="" value="No">No</label>
+                     <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.dynamic_pricing">No</label>
                      </label>
                   </fieldset>
                   <fieldset class="inline-desk display-if-dynamic form-group">
                      <label for="minimum-nightly-fee">Minimum nightly fee</label>
-                     <input type="text" class="form-control" id="minimum-nightly-fee">
+                     <input type="text" class="form-control" id="minimum-nightly-fee" ng-model="formData.dynamic_price_minimum">
                   </fieldset>
                   <fieldset class="inline-desk display-if-dynamic form-group">
                      <label for="duration">Duration</label>
@@ -558,7 +558,7 @@
                   </fieldset>
                   <fieldset class="inline-desk form-group">
                      <label for="cleaning-fee">Cleaning fee</label>
-                     <input type="text" class="form-control" id="cleaning-fee">
+                     <input type="text" class="form-control" id="cleaning-fee" ng-model="formData.cleaning_fee">
                   </fieldset>
                   <hr/>
                   <h4>Deposit</h4>
@@ -567,17 +567,17 @@
                   </fieldset>
                   <fieldset>
                   	<label class="amenity">
-                     <input type="radio" class="option-input radio" name="" id="" value="yes">Yes</label>
+                     <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.require_deposit">Yes</label>
                      </label>
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="" id="" value="No">No</label>
+                     <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.require_deposit">No</label>
                      </label>
                   </fieldset>
                   <hr />
                   <h4>Other</h4>
                   <fieldset class="inline-desk form-group">
                      <label for="cancellation-policy">Cancellation Policy</label>
-                     <select class="form-control" id="cancellation-policy">
+                     <select class="form-control" id="cancellation-policy" ng-model="formData.cancellation_policy.cancellable">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -587,7 +587,7 @@
                   </fieldset>
                   <fieldset class="inline-desk form-group">
                      <label for="instane-booking">Allow instant Booking</label>
-                     <select class="form-control" id="instane-booking">
+                     <select class="form-control" id="instane-booking" ng-model="formData.instant_booking">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -603,7 +603,7 @@
                		<h4>Property Available</h4>
                		<fieldset>
                      <label class="amenity">
-                     <input type="radio" class="option-input radio" name="always" id="always" value="always" >
+                     <input type="radio" class="option-input radio" name="always" id="always" value="always" ng-model="formData.always_available">
                      Always Available
                      </label>
                   </fieldset>
