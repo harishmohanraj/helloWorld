@@ -232,7 +232,7 @@
                   <button id="next_4" type="button" class="btn btn-primary pull-right next">Next</button>
                   <!--  -->
                </div>
-               <div id="sf4" class="frm">
+               <div id="sf4" class="frm container">
                   <div class="row">
                   <h4>Welcome Package</h4>
                   
@@ -569,15 +569,15 @@
                   </fieldset>
                   <fieldset>
                   	<label class="radio-inline">
-                     <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.dynamic_pricing">Yes</label>
+                     <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.dynamic_pricing" ng-value="true">Yes</label>
                    <label class="radio-inline">
-                     <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.dynamic_pricing">No</label>   
+                     <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.dynamic_pricing" ng-value="false">No</label>   
                   </fieldset>
-                  <fieldset class="inline-desk display-if-dynamic form-group">
+                  <fieldset class="inline-desk display-if-dynamic form-group" ng-show="formData.dynamic_pricing">
                      <label for="minimum-nightly-fee">Minimum nightly fee</label>
                      <input type="text" class="form-control" id="minimum-nightly-fee" ng-model="formData.dynamic_price_minimum">
                   </fieldset>
-                  <fieldset class="inline-desk display-if-dynamic form-group">
+                  <fieldset class="inline-desk display-if-dynamic form-group" ng-show="formData.dynamic_pricing">
                      <label for="duration">Duration</label>
                      <input type="text" class="form-control" id="duration">
                   </fieldset>
