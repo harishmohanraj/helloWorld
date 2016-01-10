@@ -30,17 +30,25 @@
    </div>
    <div class="row add-new">
       <div class="row">
-         <div class="hidden-xs col-md-2">
-            <div class="list-group">
+         <div class="hidden-xs col-md-4">
+            <!-- <div class="list-group">
                <a href="#" class="list-group-item"><span class="active round">1</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">2</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">3</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">4</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">5</span>Category</a>
                <a href="#" class="list-group-item"><span class="round">6</span>Category</a>
-            </div>
+            </div> -->
+            <ul class="nav">
+               <li><a href="#" class="list-group-item"><span class="active round">1</span>Category</a></li>
+               <li><a href="#" class="list-group-item"><span class="round">2</span>Category</a></li>
+               <li><a href="#" class="list-group-item"><span class="round">2</span>Category</a></li>
+               <li><a href="#" class="list-group-item"><span class="round">2</span>Category</a></li>
+               <li><a href="#" class="list-group-item"><span class="round">2</span>Category</a></li>
+               <li><a href="#" class="list-group-item"><span class="round">2</span>Category</a></li>
+            </ul>
          </div>
-         <div class="col-sm-12 col-md-9">
+         <div class="col-sm-12 col-md-6">
             <select class="form-control visible-xs" id="mobile-new-property-navigation">
                <option>Basic Information</option>
                <option>Description & Photos</option>
@@ -139,25 +147,52 @@
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="description">Description</label>
-                     <textarea type="text" class="form-control" id="description" ng-model="formData.description"></textarea>
+                     <textarea type="text" class="form-control" id="description" ng-model="formData.description" style="height:300px;"></textarea>
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="description">Property Images</label>
                      <p>Beautiful photographs help draw travellers to your property.</p>
-                     <img src="" ng-show="sbaProj.prop_pic[1]" id="prop_pic_1" />
-                     <button ng-hide="sbaProj.prop_pic[1]"  type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '1')"  class="btn-img btn btn-info " accept="image/*"  ngf-max-size="20MB"   >
-                        Add Photos
-                        <span style=""  class="progress" ng-show="f[1].progress >= 0">
-                           <div style="width:{{f[1].progress}}%"  ng-bind="f[1].progress + '%'"></div>
-                        </span>
-                     </button>
+                     <div class="row " style="margin:0px;"> 
+                <div class="col-sm-4 nopadding imgupcntr">
+                   <img src="" ng-show="sbaProj.prop_pic[1]" id="prop_pic_1" class="ng-hide">
+               <button ng-hide="sbaProj.prop_pic[1]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '1')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos
+
+
+<span style="" class="progress ng-hide" ng-show="f[1].progress >= 0">   <div style="width:%" ng-bind="f[1].progress + '%'" class="ng-binding">%</div> </span>
+
+               </button> 
+
+            </div> 
+
+            <div class="col-sm-4 nopadding imgupcntr">
+               <img src="" ng-show="sbaProj.prop_pic[2]" id="prop_pic_2" class="ng-hide">
+               <button ng-hide="sbaProj.prop_pic[2]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '2')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos 
+<span style="" class="progress ng-hide" ng-show="f[2].progress >= 0">   <div style="width:%" ng-bind="f[2].progress + '%'" class="ng-binding">%</div> </span>
+
+               </button> 
+                   
+            </div> 
+            
+            <div class="col-sm-4 nopadding imgupcntr"> 
+                  <img src="" ng-show="sbaProj.prop_pic[3]" id="prop_pic_3" class="ng-hide">
+                <button ng-hide="sbaProj.prop_pic[3]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '3')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos  
+
+                <span style="" class="progress ng-hide" ng-show="f[3].progress >= 0">   <div style="width:%" ng-bind="f[3].progress + '%'" class="ng-binding">%</div> </span>
+
+            </button> 
+                     
+                      
+                   
+            </div> 
+
+            </div>
                   </fieldset>
-                  <button id="back_1" type="button" class="btn btn-primary pull-left back">Next</button>
+                  <!-- <button id="back_1" type="button" class="btn btn-primary pull-left back">Next</button> -->
                   <button id="next_3" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf3" class="frm">
                   <h3>Property Address</h3>
-                  <fieldset class="form-group">
+                  <fieldset class="form-group inline-desk">
                      <label for="country">Country</label>
                      <select class="form-control" id="country" ng-model="formData.country">
                         <option>1</option>
@@ -199,9 +234,9 @@
                   </fieldset>
                   <fieldset class="form-group">
                      <label for="map-description">Description</label>
-                     <textarea type="text" class="form-control" id="map-description"></textarea>
+                     <textarea type="text" class="form-control" id="map-description" style="height:150px;"></textarea>
                   </fieldset>
-                  <button id="back_2" type="button" class="btn btn-primary pull-left back">Prev</button>
+                  <!-- <button id="back_2" type="button" class="btn btn-primary pull-left back">Prev</button> -->
                   <button id="next_4" type="button" class="btn btn-primary pull-right next">Next</button>
                   <!--  -->
                </div>
@@ -518,7 +553,7 @@
                      </label>
                   </fieldset>
                   </div>
-                  <button id="back_3" type="button" class="btn btn-primary pull-left back">Prev</button>
+                  <!-- <button id="back_3" type="button" class="btn btn-primary pull-left back">Prev</button> -->
                   <button id="next_5" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf5" class="frm">
@@ -596,7 +631,7 @@
                      </select>
                   </fieldset>
 
-               	<button id="back_4" type="button" class="btn btn-primary pull-left back">Prev</button>
+               	<!-- <button id="back_4" type="button" class="btn btn-primary pull-left back">Prev</button> -->
                   <button id="next_6" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf6" class="frm">
@@ -613,7 +648,7 @@
                      Choose your date
                      </label>
                   </fieldset>
-               		<button id="back_5" type="button" class="btn btn-primary pull-left back">Prev</button>
+               		<!-- <button id="back_5" type="button" class="btn btn-primary pull-left back">Prev</button> -->
 
                    <button class="btn btn-primary pull-right save-draft" type="submit">Save as draft </button>
                    <button class="btn btn-primary pull-right save-publish" type="submit">Save and Publish </button>

@@ -64,73 +64,50 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
         if (selectedValue === 'previous') {
             // make json call for past here
             $scope.getPastEvent();
+            $scope.displayReview = true;
             //jQuery('.reservation-wrapper .thumbnail .guest.previous').addClass('inline');
         } else {
             // make json call for upcoming here
             $scope.getUpcomingEvent();
+            $scope.displayReview = false;
             //jQuery('.reservation-wrapper .thumbnail .guest.previous').removeClass('inline');
         }
     });
 
     // submit a reviewq
-    $('.submit-review-signup').magnificPopup({
-        type: 'inline',
-        midClick: true,
-        callbacks: {
-            open: function() {
-                $('html').css({
-                    'overflow': 'hidden',
-                    'height': '100%'
-                });
-                $('body').css({
-                    'overflow': 'hidden',
-                    'height': '100%'
-                });
-            },
-            close: function() {
-                $('html').css({
-                    'overflow': 'auto',
-                    'height': 'auto'
-                });
-                $('body').css({
-                    'overflow': 'auto',
-                    'height': 'auto'
-                });
+    $scope.callForPastEvent = function(){
+        console.log("calling")
+        $('.submit-review-signup , .make-claim-signup').magnificPopup({
+            type: 'inline',
+            midClick: true,
+            callbacks: {
+                open: function() {
+                    $('html').css({
+                        'overflow': 'hidden',
+                        'height': '100%'
+                    });
+                    $('body').css({
+                        'overflow': 'hidden',
+                        'height': '100%'
+                    });
+                },
+                close: function() {
+                    $('html').css({
+                        'overflow': 'auto',
+                        'height': 'auto'
+                    });
+                    $('body').css({
+                        'overflow': 'auto',
+                        'height': 'auto'
+                    });
+                }
             }
-        }
-    });
+        });
+    }
 
     // make a claim
 
-    $('.make-claim-signup').magnificPopup({
-        type: 'inline',
-        midClick: true,
-        callbacks: {
-            open: function() {
-                $('html').css({
-                    'overflow': 'hidden',
-                    'height': '100%'
-                });
-                $('body').css({
-                    'overflow': 'hidden',
-                    'height': '100%'
-                });
-            },
-            close: function() {
-                $('html').css({
-                    'overflow': 'auto',
-                    'height': 'auto'
-                });
-                $('body').css({
-                    'overflow': 'auto',
-                    'height': 'auto'
-                });
-            }
-        }
-    });
-
-
-    $scope.listUpcoming = function () {
+   $scope.listUpcoming = function () {
         $scope.isUpcomingView = true;
         $scope.isPastView = false;
         $scope.displayReview = false;
@@ -143,8 +120,9 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
         $scope.isPastView = true;
         $scope.isUpcomingView = true;
         $scope.displayReview = true;
-
+        //$scope.callForPastEvent();
         $scope.getPastEvent();
+
     }
 
     //Load Messages by default

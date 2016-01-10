@@ -229,11 +229,29 @@ margin-top: 0px;
 .property-wrapper .list-group-item span.active{
     background-color: #47C3C6;
 }
-.property-wrapper .list-group-item span.round{
-    border-radius: 100%;
-    padding:10px;
-    margin:0px 15px;
+.property-wrapper .list-group-item > span{
+        border-radius: 50%;
+    padding: 7px 15px;
+    margin: 0px 15px;
     display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-weight: 700;
+    background-color: gray;
+}
+#new-property-form .frm button.next{
+    padding: 12px 60px;
+    font-size: 13px;
+    background-color: #47c3c6;
+    border: none;
+    margin-top:60px;
+}
+#new-property-form .frm button.btn-img {
+    color: #47c3c6;
+    background-color: #fff;
+    background-image: url("../../assets/images/login-signup/icon/1x/add_photo.png");
+
 }
 
 /*Desktop Styles*/
@@ -241,7 +259,8 @@ margin-top: 0px;
     #new-property-form .frm .form-group.inline-desk {
         margin-bottom: 15px;
         display: inline-block;
-        width: 48%;
+        width: 47%;
+        margin: 15px 4px;
     }
 }
 
@@ -319,4 +338,15 @@ Reservation page
 }
 .reservation-wrapper .thumbnail .guest.previous.inline{
     display: inline-block;
+}
+.reservation-wrapper .thumbnail .visible-xs-inline{
+    display: inline-block !important; 
+}
+
+
+/*Desktop Styles*/
+@media screen and (min-width: 1004px){
+   .reservation-wrapper .thumbnail .visible-xs-inline{
+        display: none !important;
+    }
 }
