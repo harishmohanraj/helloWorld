@@ -2,7 +2,7 @@
    <div class="row list-existing">
       <div class="list-property col-md-3">
          <div class="list-property-icon">
-            <span><img src="assets/amentities/amenity-air_condition.png"></span>
+            <span><img src="assets/images/add_property.png"></span>
             <p>List your first property and start earning money</p>
          </div>
          <div class="list-property-text">List a new property</div>
@@ -144,40 +144,35 @@
                   <fieldset class="form-group">
                      <label for="description">Property Images</label>
                      <p>Beautiful photographs help draw travellers to your property.</p>
-                     <div class="row " style="margin:0px;"> 
-                <div class="col-sm-4 nopadding imgupcntr">
-                   <img src="" ng-show="sbaProj.prop_pic[1]" id="prop_pic_1" class="ng-hide">
-               <button ng-hide="sbaProj.prop_pic[1]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '1')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos
-
-
-<span style="" class="progress ng-hide" ng-show="f[1].progress >= 0">   <div style="width:%" ng-bind="f[1].progress + '%'" class="ng-binding">%</div> </span>
-
-               </button> 
-
-            </div> 
-
-            <div class="col-sm-4 nopadding imgupcntr">
-               <img src="" ng-show="sbaProj.prop_pic[2]" id="prop_pic_2" class="ng-hide">
-               <button ng-hide="sbaProj.prop_pic[2]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '2')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos 
-<span style="" class="progress ng-hide" ng-show="f[2].progress >= 0">   <div style="width:%" ng-bind="f[2].progress + '%'" class="ng-binding">%</div> </span>
-
-               </button> 
-                   
-            </div> 
-            
-            <div class="col-sm-4 nopadding imgupcntr"> 
-                  <img src="" ng-show="sbaProj.prop_pic[3]" id="prop_pic_3" class="ng-hide">
-                <button ng-hide="sbaProj.prop_pic[3]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '3')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">Add Photos  
-
-                <span style="" class="progress ng-hide" ng-show="f[3].progress >= 0">   <div style="width:%" ng-bind="f[3].progress + '%'" class="ng-binding">%</div> </span>
-
-            </button> 
-                     
-                      
-                   
-            </div> 
-
-            </div>
+                     <div class="row " style="margin:0px;">
+                        <div class="col-sm-4 nopadding imgupcntr">
+                           <img src="" ng-show="sbaProj.prop_pic[1]" id="prop_pic_1" class="ng-hide">
+                           <button ng-hide="sbaProj.prop_pic[1]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '1')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">
+                              Add Photos
+                              <span style="" class="progress ng-hide" ng-show="f[1].progress >= 0">
+                                 <div style="width:%" ng-bind="f[1].progress + '%'" class="ng-binding">%</div>
+                              </span>
+                           </button>
+                        </div>
+                        <div class="col-sm-4 nopadding imgupcntr">
+                           <img src="" ng-show="sbaProj.prop_pic[2]" id="prop_pic_2" class="ng-hide">
+                           <button ng-hide="sbaProj.prop_pic[2]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '2')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">
+                              Add Photos 
+                              <span style="" class="progress ng-hide" ng-show="f[2].progress >= 0">
+                                 <div style="width:%" ng-bind="f[2].progress + '%'" class="ng-binding">%</div>
+                              </span>
+                           </button>
+                        </div>
+                        <div class="col-sm-4 nopadding imgupcntr">
+                           <img src="" ng-show="sbaProj.prop_pic[3]" id="prop_pic_3" class="ng-hide">
+                           <button ng-hide="sbaProj.prop_pic[3]" type="file" ngf-select="addPropertyImg2($file, $invalidFiles, '3')" class="btn-img btn btn-info " accept="image/*" ngf-max-size="20MB">
+                              Add Photos  
+                              <span style="" class="progress ng-hide" ng-show="f[3].progress >= 0">
+                                 <div style="width:%" ng-bind="f[3].progress + '%'" class="ng-binding">%</div>
+                              </span>
+                           </button>
+                        </div>
+                     </div>
                   </fieldset>
                   <!-- <button id="back_1" type="button" class="btn btn-primary pull-left back">Next</button> -->
                   <button id="next_3" type="button" class="btn btn-primary pull-right next">Next</button>
@@ -234,322 +229,317 @@
                </div>
                <div id="sf4" class="frm container">
                   <div class="row">
-                  <h4>Welcome Package</h4>
-                  
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="coffee" id="coffee" value="coffee" ng-model="formData.amenity_coffee">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-coffee.png"></span>
-                     Coffee
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label>
-                     <input type="checkbox" class="option-input radio" name="wine" id="wine" value="wine"  ng-model="formData.amenity_wine">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-wine.png"></span>
-                     Wine
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label>
-                     <input type="checkbox" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" ng-model="formData.amenity_juice">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-fruit_juice.png"></span>
-                     Fruit Juice
-                     </label>
-                  </fieldset >
-                  <fieldset class="col-md-4" style="clear:both;"><label>
-                     <input type="checkbox" class="option-input radio" name="tea" id="tea" value="tea" ng-model="formData.amenity_tea">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-tea.png"></span>
-                     Tea
-                     </label>
-                  </fieldset>
+                     <h4>Welcome Package</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="coffee" id="coffee" value="coffee" ng-model="formData.amenity_coffee">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-coffee.png"></span>
+                        Coffee
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label>
+                        <input type="checkbox" class="option-input radio" name="wine" id="wine" value="wine"  ng-model="formData.amenity_wine">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-wine.png"></span>
+                        Wine
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label>
+                        <input type="checkbox" class="option-input radio" name="fruit_juice" id="fruit_juice" value="fruit_juice" ng-model="formData.amenity_juice">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-fruit_juice.png"></span>
+                        Fruit Juice
+                        </label>
+                     </fieldset >
+                     <fieldset class="col-md-4" style="clear:both;"><label>
+                        <input type="checkbox" class="option-input radio" name="tea" id="tea" value="tea" ng-model="formData.amenity_tea">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-tea.png"></span>
+                        Tea
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Provided to guest</h4>
-                  
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="washer" id="washer" value="washer" ng-model="formData.amenity_washer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-washer.png"></span>
-                     Washer
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" ng-model="formData.amenity_toiletries">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-toiletries.png"></span>
-                     Toiletries
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="shower" id="shower" value="shower" ng-model="formData.amenity_shower">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-shower.png"></span>
-                     Shower
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="dryer" id="dryer" value="dryer" ng-model="formData.amenity_dryer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-dryer.png"></span>
-                     Dryer
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="towels" id="towels" value="towels" ng-model="formData.amenity_towels">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-towels.png"></span>
-                     Towels
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" ng-model="formData.amenity_hair_dryer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-hair_dryer.png"></span>
-                     Hair Dryer
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" ng-model="formData.amenity_breakfast">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-breakfast.png"></span>
-                     Break Fast
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" ng-model="formData.amenity_iron">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-electric_iron.png"></span>
-                     Electric Iron
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" ng-model="formData.amenity_bathtub">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-bathtub.png"></span>
-                     Bathtub
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" ng-model="formData.amenity_alarm_clock">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-alarm_clock.png"></span>
-                     Alarm Clock
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" ng-model="formData.amenity_sheets">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-linen_bed_sheet.png"></span>
-                     Linens
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-local_long_distance_ call.png"></span>
-                     Local/long calls
-                     </label>
-                  </fieldset>
+                     <h4>Provided to guest</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="washer" id="washer" value="washer" ng-model="formData.amenity_washer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-washer.png"></span>
+                        Washer
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="toiletries" id="toiletries" value="toiletries" ng-model="formData.amenity_toiletries">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-toiletries.png"></span>
+                        Toiletries
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="shower" id="shower" value="shower" ng-model="formData.amenity_shower">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-shower.png"></span>
+                        Shower
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="dryer" id="dryer" value="dryer" ng-model="formData.amenity_dryer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-dryer.png"></span>
+                        Dryer
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="towels" id="towels" value="towels" ng-model="formData.amenity_towels">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-towels.png"></span>
+                        Towels
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="hair_dryer" id="hair_dryer" value="hair_dryer" ng-model="formData.amenity_hair_dryer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-hair_dryer.png"></span>
+                        Hair Dryer
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="breakfast" id="breakfast" value="breakfast" ng-model="formData.amenity_breakfast">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-breakfast.png"></span>
+                        Break Fast
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="electric_iron" id="electric_iron" value="electric_iron" ng-model="formData.amenity_iron">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-electric_iron.png"></span>
+                        Electric Iron
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="bathtub" id="bathtub" value="bathtub" ng-model="formData.amenity_bathtub">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-bathtub.png"></span>
+                        Bathtub
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="alarm_clock" id="alarm_clock" value="alarm_clock" ng-model="formData.amenity_alarm_clock">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-alarm_clock.png"></span>
+                        Alarm Clock
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="linen_bed" id="linen_bed" value="linen_bed" ng-model="formData.amenity_sheets">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-linen_bed_sheet.png"></span>
+                        Linens
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="local_long_distance_call" id="local_long_distance_call" value="local_long_distance_call">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-local_long_distance_ call.png"></span>
+                        Local/long calls
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Kichen</h4>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="fridge" id="fridge" value="fridge" ng-model="formData.amenity_fridge">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-fridge.png"></span>
-                     Refrigerator
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" ng-model="formData.amenity_coffee_machine">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-coffee machine.png"></span>
-                     Coffee Machine
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" ng-model="formData.amenity_mixer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-hand_mixer.png"></span>
-                     Hand Mixer
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" ng-model="formData.amenity_smoke_detector">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-smoke detector.png"></span>
-                     Smoke detector
-                     </label>
-                  </fieldset>
+                     <h4>Kichen</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="fridge" id="fridge" value="fridge" ng-model="formData.amenity_fridge">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-fridge.png"></span>
+                        Refrigerator
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="coffee_machine" id="coffee_machine" value="coffee_machine" ng-model="formData.amenity_coffee_machine">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-coffee machine.png"></span>
+                        Coffee Machine
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="hand_mixer" id="hand_mixer" value="hand_mixer" ng-model="formData.amenity_mixer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-hand_mixer.png"></span>
+                        Hand Mixer
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="smoke_detector" id="smoke_detector" value="smoke_detector" ng-model="formData.amenity_smoke_detector">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-smoke detector.png"></span>
+                        Smoke detector
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Facilities</h4>
-                  
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="parking" id="parking" value="parking" ng-model="formData.amenity_parking">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-parking.png"></span>
-                     Parking
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="garden" id="garden" value="garden" ng-model="formData.amenity_garden">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-garden.png"></span>
-                     Garden
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="terrace" id="terrace" value="terrace" ng-model="formData.amenity_terrace">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-terrace.png"></span>
-                     Terrace
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="pool" id="pool" value="pool"  ng-model="formData.amenity_pool" >
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-pool.png"></span>
-                     Pool
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="gym" id="gym" value="gym" ng-model="formData.amenity_gym">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-gym.png"></span>
-                     Gym
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" ng-model="formData.amenity_hospital_nearby">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-hospital_nearby.png"></span>
-                     Hospital Nearby
-                     </label>
-                  </fieldset>
+                     <h4>Facilities</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="parking" id="parking" value="parking" ng-model="formData.amenity_parking">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-parking.png"></span>
+                        Parking
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="garden" id="garden" value="garden" ng-model="formData.amenity_garden">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-garden.png"></span>
+                        Garden
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="terrace" id="terrace" value="terrace" ng-model="formData.amenity_terrace">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-terrace.png"></span>
+                        Terrace
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="pool" id="pool" value="pool"  ng-model="formData.amenity_pool" >
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-pool.png"></span>
+                        Pool
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="gym" id="gym" value="gym" ng-model="formData.amenity_gym">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-gym.png"></span>
+                        Gym
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="hospital_nearby" id="hospital_nearby" value="hospital_nearby" ng-model="formData.amenity_hospital_nearby">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-hospital_nearby.png"></span>
+                        Hospital Nearby
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Entertainment and electronics</h4>
-                  
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="wifi" id="wifi" value="wifi" ng-model="formData.amenity_hospital_wifi" >
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-wifi.png"></span>
-                     WiFi
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" ng-model="formData.amenity_internet">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-wired_network.png"></span>
-                     Wired network
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" ng-model="formData.amenity_dvd_player">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-dvd_player.png"></span>
-                     DVD Player
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="tv" id="tv" value="tv" ng-model="formData.amenity_tv">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-tv.png"></span>
-                     Tv
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="game_player" id="game_player" value="game_player" ng-model="formData.amenity_game_player">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-game_player.png"></span>
-                     Gaming console
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
-                     Printer
-                     </label>
-                  </fieldset>
+                     <h4>Entertainment and electronics</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="wifi" id="wifi" value="wifi" ng-model="formData.amenity_hospital_wifi" >
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-wifi.png"></span>
+                        WiFi
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="wired_network" id="wired_network" value="wired_network" ng-model="formData.amenity_internet">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-wired_network.png"></span>
+                        Wired network
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="dvd_player" id="dvd_player" value="dvd_player" ng-model="formData.amenity_dvd_player">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-dvd_player.png"></span>
+                        DVD Player
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="tv" id="tv" value="tv" ng-model="formData.amenity_tv">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-tv.png"></span>
+                        Tv
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="game_player" id="game_player" value="game_player" ng-model="formData.amenity_game_player">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-game_player.png"></span>
+                        Gaming console
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
+                        Printer
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Heating and cooling</h4>
-                  
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" ng-model="formData.amenity_fireplace">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-indoor fireplace.png"></span>
-                     Indore fireplace
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="heating" id="heating" value="heating" ng-model="formData.amenity_heating">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-heating.png"></span>
-                     Heating
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" ng-model="formData.amenity_ac">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-air_condition.png"></span>
-                     Air conditioning
-                     </label>
-                  </fieldset>
+                     <h4>Heating and cooling</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="indore_fireplace" id="indore_fireplace" value="indore_fireplace" ng-model="formData.amenity_fireplace">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-indoor fireplace.png"></span>
+                        Indore fireplace
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="heating" id="heating" value="heating" ng-model="formData.amenity_heating">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-heating.png"></span>
+                        Heating
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="air_condition" id="air_condition" value="air_condition" ng-model="formData.amenity_ac">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-air_condition.png"></span>
+                        Air conditioning
+                        </label>
+                     </fieldset>
                   </div>
                   <div class="row">
-                  <h4>Suitability</h4>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" ng-model="formData.amenity_smoking">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-smoke allowed.png"></span>
-                     Smoke allowed
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" ng-model="formData.amenity_pets">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-pet friendly.png"></span>
-                     Pet-friendly
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="elevator" id="elevator" value="elevator" ng-model="formData.amenity_elevator">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-elevator.png"></span>
-                     Elevator
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4" style="clear:both;">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" ng-model="formData.amenity_wheelchair_accessible">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-wheelchair.png"></span>
-                     Wheelchair
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" ng-model="formData.amenity_medicine_cabinet">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-medicine cabinet.png"></span>
-                     Medicine cabinet
-                     </label>
-                  </fieldset>
-                  <fieldset class="col-md-4">
-                     <label class="amenity">
-                     <input type="checkbox" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
-                     <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
-                     Printer
-                     </label>
-                  </fieldset>
+                     <h4>Suitability</h4>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="smoke_allowed" id="smoke_allowed" value="smoke_allowed" ng-model="formData.amenity_smoking">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-smoke allowed.png"></span>
+                        Smoke allowed
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="pet_friendly" id="pet_friendly" value="pet_friendly" ng-model="formData.amenity_pets">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-pet friendly.png"></span>
+                        Pet-friendly
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="elevator" id="elevator" value="elevator" ng-model="formData.amenity_elevator">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-elevator.png"></span>
+                        Elevator
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4" style="clear:both;">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="wheelchair" id="wheelchair" value="wheelchair" ng-model="formData.amenity_wheelchair_accessible">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-wheelchair.png"></span>
+                        Wheelchair
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="medicine_cabinet" id="medicine_cabinet" value="medicine_cabinet" ng-model="formData.amenity_medicine_cabinet">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-medicine cabinet.png"></span>
+                        Medicine cabinet
+                        </label>
+                     </fieldset>
+                     <fieldset class="col-md-4">
+                        <label class="amenity">
+                        <input type="checkbox" class="option-input radio" name="printer" id="printer" value="printer" ng-model="formData.amenity_printer">
+                        <span class="amenity-icon"><img src="assets/amentities/amenity-printer.png"></span>
+                        Printer
+                        </label>
+                     </fieldset>
                   </div>
                   <!-- <button id="back_3" type="button" class="btn btn-primary pull-left back">Prev</button> -->
                   <button id="next_5" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf5" class="frm">
-               <h3>Base Price</h3>
+                  <h3>Base Price</h3>
                   <fieldset class="form-group inline-desk">
                      <label for="nightly-price">Preferred nightly price</label>
                      <input type="text" class="form-control" id="nightly-price">
@@ -565,12 +555,12 @@
                      </select>
                   </fieldset>
                   <fieldset>
-                  <label class="allow_dynamic">Allow dynamic pricing</label>                     
+                     <label class="allow_dynamic">Allow dynamic pricing</label>                     
                   </fieldset>
                   <fieldset>
-                  	<label class="radio-inline">
+                     <label class="radio-inline">
                      <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.dynamic_pricing" ng-value="true">Yes</label>
-                   <label class="radio-inline">
+                     <label class="radio-inline">
                      <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.dynamic_pricing" ng-value="false">No</label>   
                   </fieldset>
                   <fieldset class="inline-desk display-if-dynamic form-group" ng-show="formData.dynamic_pricing">
@@ -588,12 +578,12 @@
                   <hr/>
                   <h4>Deposit</h4>
                   <fieldset>
-                  	 <label>Security Deposit?</label>                     
+                     <label>Security Deposit?</label>                     
                   </fieldset>
                   <fieldset>
-                  	<label class="radio-inline">
+                     <label class="radio-inline">
                      <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.require_deposit">Yes</label>
-                   <label class="radio-inline">
+                     <label class="radio-inline">
                      <input type="radio"  class="option-input radio" name="" id="" value="No" ng-model="formData.require_deposit">No</label>
                   </fieldset>
                   <hr />
@@ -618,22 +608,20 @@
                         <option>5</option>
                      </select>
                   </fieldset>
-
-               	<!-- <button id="back_4" type="button" class="btn btn-primary pull-left back">Prev</button> -->
+                  <!-- <button id="back_4" type="button" class="btn btn-primary pull-left back">Prev</button> -->
                   <button id="next_6" type="button" class="btn btn-primary pull-right next">Next</button>
                </div>
                <div id="sf6" class="frm">
-               		<h4>Property Available</h4>
-               		<fieldset>
-                     <label class="radio-inline">
-                     <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.always_available">Yes</label>
+                  <h4>Property Available</h4>
+                  <fieldset>
                    <label class="radio-inline">
-                     <input type="radio"  class="option-input radio" name="" id="" value="No" >No</label>
+                   <input type="radio" class="option-input radio" name="" id="" value="yes" ng-model="formData.always_available" ng-value="true">Yes</label>
+                   <label class="radio-inline">
+                   <input type="radio" class="option-input radio" name="" id="" value="No" ng-model="formData.always_available" ng-value="false">No</label>   
                   </fieldset>
-               		<!-- <button id="back_5" type="button" class="btn btn-primary pull-left back">Prev</button> -->
-                     <button class="btn btn-primary pull-right save-publish" style="margin-left:15px;" type="submit">Save and Publish </button>
-                   <button class="btn btn-primary pull-right save-draft btn-danger" type="submit">Save as draft </button>
-                   
+                  <!-- <button id="back_5" type="button" class="btn btn-primary pull-left back">Prev</button> -->
+                  <button class="btn btn-primary pull-right save-publish" style="margin-left:15px;" type="submit">Save and Publish </button>
+                  <button class="btn btn-primary pull-right save-draft btn-danger" type="submit">Save as draft </button>
                </div>
             </form>
          </div>

@@ -23,6 +23,7 @@ section#account-nav .left-col p{
 section#account-nav .left-col span img{
     margin-left: -15px;
     margin-right: 15px;
+    width: 20px;
 }
 
 /* ------------------------------------------------------------------
@@ -32,8 +33,22 @@ section#account-nav .desktopNav{
     margin-top:65px;
     background-color: #6a6d72;
 }
+section#account-nav .desktopNav .navbar-nav li{
+     padding: 0px;
+}
+section#account-nav .desktopNav .navbar-nav li.active > a{
+    background-color: #8c9197;
+}
 section#account-nav .desktopNav .navbar-nav li > a{
     color:white;
+    text-align: center;
+
+}
+section#account-nav .desktopNav .navbar-nav li > a > img{
+    display: block;
+    margin: 0px auto 10px;
+    height: 22px;
+    width: 28px;
 }
 
 /* ------------------------------------------------------------------
@@ -48,8 +63,9 @@ section#account-property p{
 }
 section#account-property .list-property{
      border: 2px solid #47c3c5;
-     margin: 10px 5px;
+     margin: 10px 0px;
     text-align: center;
+    padding: 0px;
 }
 section#account-property .list-property .list-property-icon{
     padding:40px 103px 25px 103px;
@@ -222,10 +238,10 @@ margin-top: 0px;
     font-size: 12px;
 }
 .property-wrapper .list-existing{
-    display: none;
+    display: block;
 }
 .property-wrapper .add-new{
-    display: block;
+    display: none;
 }
 
 .property-wrapper .list-group-item{

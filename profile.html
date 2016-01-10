@@ -100,24 +100,24 @@
     <!-- HOME -->
     <section id="account-nav">
 
-        <!--<div class="container">-->
-            <!--<div class="left-col">-->
-                <!--<div class="row text-center" >-->
-                    <!--<div class="col-xs-12">-->
-                        <!--<span><img src="assets/amentities/amenity-air_condition.png"></span>-->
-                        <!--<p>My Properties</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <nav class="navbar navbar-default desktopNav">
+        <div class="container visible-xs">
+            <div class="left-col">
+                <div class="row text-center" >
+                    <div class="col-xs-12">
+                        <span><img src="assets/images/nav-my property.png"/></span>
+                        <p>My Properties</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default desktopNav hidden-xs" ng-controller="desktopNav">
             <div class="container">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/"><i class="fa fa-home"></i> Dashboard</a></li>
-                    <li><a href="#properties"><i class="fa fa-shield"></i> My Properties</a></li>
-                    <li><a href="#reservations"><i class="fa fa-comment"></i> Reservations</a></li>
-                    <li><a href="#inbox"><i class="fa fa-comment"></i> Inbox</a></li>
-                    <li><a href="#settings"><i class="fa fa-comment"></i> Settings</a></li>
+                <ul class="nav navbar-nav nav-pills">
+                    <li class="active"><a href="#/"><img src="assets/images/nav-dashboard.png"/> Dashboard</a></li>
+                    <li><a href="#properties"><img src="assets/images/nav-my property.png"/> My Properties</a></li>
+                    <li><a href="#reservations"><img src="assets/images/nav-reservations.png"/> Reservations</a></li>
+                    <li><a href="#inbox"><img src="assets/images/nav-inbox.png"/> Inbox</a></li>
+                    <li><a href="#settings"><img src="assets/images/nav-settings.png"/> Settings</a></li>
                 </ul>
             </div>
         </nav>

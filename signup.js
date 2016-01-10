@@ -703,6 +703,14 @@
  //
  //}]);
 
+ app.controller("desktopNav", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
+
+     // create a message to display in our view
+     jQuery('.desktopNav li').on('click', function(){
+        jQuery('.desktopNav li').removeClass('active');
+        jQuery(this).addClass('active');
+     })
+ }]);
  app.controller("dashboardController", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
 
      // create a message to display in our view
@@ -711,136 +719,119 @@
  }]);
 
  app.controller("propertiesController", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
-
-     $scope.getProps = function() {
-         var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {}, {
-             get: {
-                 'method': 'GET',
-                 headers: {
-                     'Content-Type': 'application/x-www-form-urlencoded',
-                     'Authorization': '' + window.sessionStorage.session_token
-                 }
-             }
-         });
-
-         User.get({}, function(data) {
-
-             if (data.success) {
-
-                 $scope.properties = data.properties;
-                 setTimeout(function() {
-                     jQuery('section#account-property .existing-property .prop-details span.stars').stars();
-                 }, 10)
-
-
-             } else {
-
-                 //$scope.sbaProj.frmError = data.error;
-             }
-
-         }, function() {
-             //error handle
-             $window.alert("Some error occurred. please contact your admin.");
-
-         });
-
-         function validateNewPropertyFrom() {
-             var newPropForm = jQuery("#new-property-form");
-             jQuery(".frm").hide();
-             jQuery("#sf1").show();
-
-             jQuery(".next").click(function() {
-                 jQuery(".frm").hide();
-                 jQuery("#sf" + jQuery(this).attr('id').split('_')[1]).show();
-                 jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
-                 jQuery('#form-nav li').find('span').removeClass('active ');
-                 jQuery('#form-nav li#load-frm_'+jQuery(this).attr('id').split('_')[1]).find('span').addClass('active ');
-             });
-
-             /*jQuery(".back").click(function() {
-                 jQuery(".frm").hide();
-                 jQuery("#sf" + jQuery(this).attr('id').split('_')[1]).show();
-                 jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-             });*/
-
-             /*jQuery(".open2").click(function() {
-                 jQuery(".frm").hide();
-                 jQuery("#sf3").show();
-                 jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
-             });
-              
-             jQuery(".open3").click(function() {
-                 jQuery("#loader").show();
-                  setTimeout(function(){
-                    jQuery("#new-property-form").html('<h2>Thanks for your time.</h2>');
-                  }, 1000);
-                 return false;
-             });*/
-
-
-
-             /*jQuery(".back3").click(function() {
-               jQuery(".frm").hide();
-               jQuery("#sf2").show();
-               jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-             });*/
-
-             jQuery('#mobile-new-property-navigation').on('change', function() {
-                 var selectedIndex = jQuery(this).prop('selectedIndex') + 1;
-                 jQuery(".frm").hide();
-                 jQuery("#sf" + selectedIndex).show();
-
-             });
-
-             jQuery('#form-nav li').on('click', function() {
-
-                 var selectedIndex = jQuery(this).attr('id').split('_')[1];
-                 jQuery('#form-nav li').find('span').removeClass('active ');
-                 jQuery(this).find('span').addClass('active ');
-                 jQuery(".frm").hide();
-                 jQuery("#sf" + selectedIndex).show();
-
-
-             });
-
-         }
-
-         if (jQuery('#new-property-form')) {
-             validateNewPropertyFrom();
-         }
-         // validate and submit form
-         $scope.formData = {};
-
-
-
-         // process the form
-         $scope.processForm = function() {
-             console.log($scope.formData);
-             $http({
-                     method: 'POST',
-                     url: 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/create',
-                     data: $.param($scope.formData), // pass in data as strings
+     if (window.sessionStorage.session_token !== undefined) {
+         $scope.getProps = function() {
+             var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {}, {
+                 get: {
+                     'method': 'GET',
                      headers: {
                          'Content-Type': 'application/x-www-form-urlencoded',
                          'Authorization': '' + window.sessionStorage.session_token
-                     } // set the headers so angular passing info as form data (not request payload)
-                 })
-                 .success(function(data) {
-                     console.log(data);
-
-                     if (!data.success) {
-                         // if not successful, bind errors to error variables
-                         $scope.errorName = data.errors.name;
-                         $scope.errorSuperhero = data.errors.superheroAlias;
-                     } else {
-                         // if successful, bind success message to message
-                         $scope.message = data.message;
                      }
+                 }
+             });
+
+             User.get({}, function(data) {
+
+                 if (data.success) {
+
+                     $scope.properties = data.properties;
+                     setTimeout(function() {
+                         jQuery('section#account-property .existing-property .prop-details span.stars').stars();
+                     }, 10)
+
+
+                 } else {
+
+                     //$scope.sbaProj.frmError = data.error;
+                 }
+
+             }, function() {
+                 //error handle
+                 $window.alert("Some error occurred. please contact your admin.");
+
+             });
+
+             function validateNewPropertyFrom() {
+                 var newPropForm = jQuery("#new-property-form");
+                 jQuery(".frm").hide();
+                 jQuery("#sf1").show();
+
+                 jQuery(".next").click(function() {
+                     jQuery(".frm").hide();
+                     jQuery("#sf" + jQuery(this).attr('id').split('_')[1]).show();
+                     jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+                     jQuery('#form-nav li').find('span').removeClass('active ');
+                     jQuery('#form-nav li#load-frm_' + jQuery(this).attr('id').split('_')[1]).find('span').addClass('active ');
                  });
-         };
+
+
+
+                 jQuery('#mobile-new-property-navigation').on('change', function() {
+                     var selectedIndex = jQuery(this).prop('selectedIndex') + 1;
+                     jQuery(".frm").hide();
+                     jQuery("#sf" + selectedIndex).show();
+
+                 });
+
+                 jQuery('#form-nav li').on('click', function() {
+
+                     var selectedIndex = jQuery(this).attr('id').split('_')[1];
+                     jQuery('#form-nav li').find('span').removeClass('active ');
+                     jQuery(this).find('span').addClass('active ');
+                     jQuery(".frm").hide();
+                     jQuery("#sf" + selectedIndex).show();
+
+
+                 });
+
+             }
+
+             jQuery('.list-property-text').on('click', function(){
+                jQuery('.property-wrapper .list-existing').hide();
+                jQuery('.property-wrapper .add-new').show();
+             });
+
+             if (jQuery('#new-property-form')) {
+                 validateNewPropertyFrom();
+             }
+             // validate and submit form
+             $scope.formData = {};
+
+
+
+             // process the form
+             $scope.processForm = function() {
+                 console.log($scope.formData);
+                 $http({
+                         method: 'POST',
+                         url: 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/create',
+                         data: $.param($scope.formData), // pass in data as strings
+                         headers: {
+                             'Content-Type': 'application/x-www-form-urlencoded',
+                             'Authorization': '' + window.sessionStorage.session_token
+                         } // set the headers so angular passing info as form data (not request payload)
+                     })
+                     .success(function(data) {
+                         console.log(data);
+
+                         if (!data.success) {
+                             // if not successful, bind errors to error variables
+                             $scope.errorName = data.errors.name;
+                             $scope.errorSuperhero = data.errors.superheroAlias;
+                         } else {
+                             // if successful, bind success message to message
+                             $scope.message = data.message;
+                         }
+                     });
+             };
+         }
+
+         $scope.getProps();
+     } else {
+         window.alert("please log in")
      }
 
-     $scope.getProps();
 
  }]);
 
