@@ -182,7 +182,7 @@ margin-top: 0px;
 
 #new-property-form .frm .option-input:hover { background: #9faab7; }
 
-#new-property-form .frm .option-input:checked { background: #40e0d0; }
+#new-property-form .frm .option-input:checked { background: #60f0aa; }
 
 #new-property-form .frm .option-input:checked::before {
   width: 20px;
@@ -199,7 +199,7 @@ margin-top: 0px;
   -webkit-animation: click-wave 0.65s;
   -moz-animation: click-wave 0.65s;
   animation: click-wave 0.65s;
-  background: #40e0d0;
+  background: #60f0aa;
   content: '';
   display: block;
   position: relative;
@@ -244,7 +244,7 @@ margin-top: 0px;
     height: 40px;
     color: #fff;
     font-weight: 700;
-    background-color: gray;
+    background-color: #c1c8d0;
 }
 #new-property-form .frm button.next{
     padding: 12px 60px;

@@ -753,13 +753,15 @@
                  jQuery(".frm").hide();
                  jQuery("#sf" + jQuery(this).attr('id').split('_')[1]).show();
                  jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+                 jQuery('#form-nav li').find('span').removeClass('active ');
+                 jQuery('#form-nav li#load-frm_'+jQuery(this).attr('id').split('_')[1]).find('span').addClass('active ');
              });
 
-             jQuery(".back").click(function() {
+             /*jQuery(".back").click(function() {
                  jQuery(".frm").hide();
                  jQuery("#sf" + jQuery(this).attr('id').split('_')[1]).show();
                  jQuery('#mobile-new-property-navigation > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-             });
+             });*/
 
              /*jQuery(".open2").click(function() {
                  jQuery(".frm").hide();
@@ -787,6 +789,17 @@
                  var selectedIndex = jQuery(this).prop('selectedIndex') + 1;
                  jQuery(".frm").hide();
                  jQuery("#sf" + selectedIndex).show();
+
+             });
+
+             jQuery('#form-nav li').on('click', function() {
+
+                 var selectedIndex = jQuery(this).attr('id').split('_')[1];
+                 jQuery('#form-nav li').find('span').removeClass('active ');
+                 jQuery(this).find('span').addClass('active ');
+                 jQuery(".frm").hide();
+                 jQuery("#sf" + selectedIndex).show();
+
 
              });
 
