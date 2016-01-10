@@ -1,0 +1,131 @@
+html.conversation .wrapper {
+	background: #efefef;
+}
+
+.message-conversation{
+  position:relative;
+padding: 10px;
+  background:#fff;
+  margin:1em 0 3em;
+}
+
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.right {
+  margin-right:50px;
+  background:#FFF;
+}
+
+
+.triangle-isosceles.left {
+  margin-left:50px;
+  background:#FFF;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#FFF transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-isosceles.top:after {
+  top:-15px; /* value = - border-top-width - border-bottom-width */
+  right:50px; /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color:#FFF transparent;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-isosceles.left:after {
+  top:16px; /* controls vertical position */
+  left:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:10px 50px 10px 0;
+  border-color:transparent #FFF;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-isosceles.right:after {
+  top:16px; /* controls vertical position */
+  right:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  left:auto;
+  border-width:10px 0 10px 50px;
+  border-color:transparent #FFF;
+}
+
+
+/* CLAIMS */
+.claimBoard {
+	background-color: #ffa800;
+	color: #fff;
+}
+.claimBoard .claimSummary{
+	padding: 40px 0;
+}
+.claimBoard .badge{
+	color: #ffa800;
+	background-color: #fff;
+	font-size: 24px;
+	border-radius: 24px;
+}
+.claimBoard .amount{
+	font-size: 70px;
+	color: #ffda9c;
+}
+.claimBoard .amount input{
+	background: transparent;border: 0;
+} 
+
+.claimBoard .amount input:active{
+	border: 0;outline: none;
+} 
+
+.claimBoard .amount input:focus{
+	border: 0;outline: none;
+} 
+
+
+.claimBoard .claimTitle {
+	color: #fff;
+	font-size: 26px;
+}
+
+.claimBoard .claimButton{
+	background: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.claimBoard .btn-xs{
+	background: transparent;
+}
+
+.claimBoard .claimCollapseButton{
+	text-align: center;
+}
+.claimBoard .claimCollapseButton .btn:active{
+	box-shadow: none;
+}

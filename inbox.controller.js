@@ -1,26 +1,24 @@
 //API Root
 app.apiRoot = 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api';
 
-// app.createApi = function($resource, path, options) {
-//     path = app.apiRoot + path;
-//     var paramDefaults = options.paramDefaults || {},
-//         method = options.method || 'get',
-//         contentType = options.contentType || 'application/x-www-form-urlencoded',
-//         authorization = noAuth? '' : 
-//     var headers = {
-//         'Content-Type': contentType,
-//         'Authorization': '' + window.sessionStorage.session_token}
-//     }
-//     var apiRequest = $resource( path, paramDefaults, 
-//         {
-//             get: { 
-//                 'method': method, 
-//                 'headers': headers
-//             }
-//         }
-//     );
-//     return apiRequest
-// }
+app.config(function($routeProvider) {
+    $routeProvider
+    // route for the home page
+        .when('/inbox/claims/:id', {
+            templateUrl : 'partials/claim.html',
+            controller  : 'inboxController'
+        }).when('/inbox/conversations/:id', {
+            templateUrl : 'inbox.conversations.html',
+            controller  : 'inboxController',
+            reloadOnSearch: false
+        }).when('/inbox/messages/:id', {
+            templateUrl : 'inbox.conversations.html',
+            controller  : 'inboxController',
+            reloadOnSearch: false
+        });
+    }
+);
+
 //Inbox Controller
 app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  function($scope, $resource,$http, Upload) {
     var apiUrls = {
@@ -34,15 +32,26 @@ app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  fu
         'claims': 'services/inbox/getClaims.json'
     }
 
-    $scope.isConversationView = true;
-    $scope.isConversations = false;
-    $scope.isMessages = false;
-
-    $scope.getMessages = function () {
+    function resetFlags () {
+        $scope.isConversationView = false;
         $scope.isConversations = false;
+        $scope.isMessages = false;
+        $scope.messageType = '';
+        $('html').removeClass('conversation');
+    }
+
+    resetFlags();
+  
+
+    $scope.getMessages = function ($conversationId) {
+        resetFlags();
         $scope.isMessages = true;
-        $scope.isClaims = false;
-        var Messages = $resource(apiUrls.messages, {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
+        $scope.messageType = 'messages';
+        var optParams = {};
+        if ( $conversationId ){
+            optParams = { 'conversation-id' : $conversationId };
+        }
+        var Messages = $resource(apiUrls.messages, optParams, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
         Messages.get( {}, function(data){
             if( data.success ) {
                 $scope.messages = data.messages;
@@ -54,13 +63,15 @@ app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  fu
     }
 
     $scope.getConversations = function () {
+        resetFlags();
         $scope.isConversations = true;
-        $scope.isMessages = false;
-        $scope.isClaims = false;
+        $scope.isConversationView = true;
+        $scope.messageType = 'conversations';
         var Conversations = $resource(apiUrls.conversations, {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
         Conversations.get( {}, function(data){
             if( data.success ) {
                 $scope.messages = data.conversations;
+                $('html').addClass('conversation');
             }
         }, function () {
             //error handle
@@ -68,11 +79,15 @@ app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  fu
         });
     }
 
-    $scope.getClaims = function () {
-        $scope.isConversations = false;
-        $scope.isMessages = false;
+    $scope.getClaims = function ($claimId) {
+        resetFlags();
         $scope.isClaims = true;
-        var Conversations = $resource(apiUrls.claims, {  }, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
+        $scope.messageType = 'claims';
+        var optParams = {};
+        if ( $claimId ){
+            optParams = { 'claim-id' : $claimId };
+        }
+        var Conversations = $resource(apiUrls.claims, optParams, {get: { 'method': 'GET', headers: {  'Content-Type': 'application/x-www-form-urlencoded' , 'Authorization': '' + window.sessionStorage.session_token } }} );
         Conversations.get( {}, function(data){
             if( data.success ) {
                 $scope.messages = data.messages;
@@ -83,6 +98,34 @@ app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  fu
         });
     }
 
+    $scope.getDetails = function ($type, $id) {
+       resetFlags();
+       window.location.hash = 'inbox/' + $type + '/' + $id;
+       return;
+       if ($type == 'conversations'){
+            $scope.getMessages($id);
+       }
+
+       if ($type == 'messages'){
+            getMessageDetail($id);
+       }
+
+       if ($type == 'claims'){
+            resetFlags();
+            $scope.isClaims = true;
+            getClaimDetail($id);
+       }
+       $scope.isConversationView = false;
+    }
+
+    function getClaimDetail($id) {
+        // $scope.getClaims($id);
+    }
+
+    function getMessageDetail ($id) {
+        alert($id);
+    }
+
     $scope.listMessages = function () {
         $scope.isConversationView = false;
         $scope.getMessages();
@@ -90,6 +133,6 @@ app.controller("inboxController", [ '$scope', '$resource', '$http','Upload',  fu
 
     //Load Messages by default
     $scope.getConversations();
-
+    // $scope.isConversationView = false;
 
 }]);
