@@ -1,16 +1,24 @@
 <div class="reservation-wrapper">
-<div class="row thumbnail">
+<div class="row thumbnail visible-xs">
      <select class="form-control ng-pristine ng-valid ng-touched" id="reservation-filter">
         <option value="upcoming">Upcoming</option>
         <option value="previous">Previous</option>
      </select>
 </div>
 <div class="row">
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-            <div class="caption">
-                <h4>First Product</h4>
+	<div class="col-sm-2 hidden-xs">
+		<ul class="nav">
+			<li ng-class="{'active': isUpcomingView}"><a href="#inbox" ng-click="listUpcoming()">Upcoming</a></li>
+			<li ng-class="{'active': isPastView}"><a href="#inbox" ng-click="listPast()">Previous</a></li>
+		</ul>
+	</div>
+    <div class="col-xs-12 col-sm-10">
+        <div class="thumbnail row" ng-repeat="booking in bookings">
+        	<div class="caption col-sm-8">
+        		
+            	<img class="col-sm-6"src="http://placehold.it/500x300" alt="">
+            	<div class="col-sm-6">
+                <h4>{{booking.property.name}}</h4>
                 <div class="ratings">
 	                <span class="private">PRIVATE</span>
 	                <p style="display:inline-block;">
@@ -21,68 +29,100 @@
 	                    <span class="glyphicon glyphicon-star"></span>
 	                </p>
 	            </div>
-                <p>description text</p>
+	            
+                <p>{{booking.property.description}}</p>
                 <p class="inline">Nights: <span>1</span></p>
                 <p class="inline">Guests: <span>1</span></p>
                 <p>Reservation Cost: <span>1</span></p>
-                <p>Booking number: <span>1</span></p>
-                <p>Customer: <span>Lia</span></p>
+                <p>Booking number: <span>{{booking.booking_id}}</span></p>
+                <p>Customer: <span>{{booking.traveler.user.username}}</span></p>
+                </div>
             </div>
-            <div class="calendar-widget-wrapper col-sm-12">
-            	<div class="calendar-widget col-sm-5">
+            <div class="calendar-widget-wrapper col-xm-12 col-sm-4">
+            	<div class="calendar-widget col-xm-5">
             		<p class="check-in">Check in</p>
             		<p class="date">23 JUL</p>
             		<p class="time">Friday 12:00 PM</p>
             	</div>
-            	<div class="calendar-widget col-sm-4 col-sm-offset-3">
+            	<div class="calendar-widget col-xm-4 col-xm-offset-3">
             		<p class="check-in">Check Out</p>
             		<p class="date">23 JUL</p>
             		<p class="time">Friday 12:00 PM</p>
             	</div>
+            	<div class="guest hidden-xs" style="margin-top:25px;">
+	            	<a href="#">Guest information <i class="fa fa-angle-right"></i></a>
+	            	<a href="#">Message history <i class="fa fa-angle-right"></i></a>	
+            	</div>	
+            	<div class="guest previous hidden-xs" style="margin-top:25px;">
+	            	<a href="#submit-review-signup" class="submit-review-signup">Leave a review <i class="fa fa-angle-right"></i></a>
+	            	<a href="#make-claim-signup" class="submit-review-signup">Make a claim  <i class="fa fa-angle-right"></i></a>
+	            </div>
             </div>
-            <div class="guest">
+            <div class="guest visible-xs">
             	<a href="#">Guest information <i class="fa fa-angle-right"></i></a>
             	<a href="#">Message history <i class="fa fa-angle-right"></i></a>	
             </div>
-            <div class="guest previous">
-            	<a href="#">Leave a review <i class="fa fa-angle-right"></i></a>
-            	<a href="#">Make a claim <i class="fa fa-angle-right"></i></a>
-            	<a href="#popup-signup" class="open-popup-signup"><div class="btn signupbutton">Sign Up</div></a>	
+            <div class="guest previous visible-xs" ng-if="displayReview">
+            	<a href="#submit-review-signup" class="submit-review-signup">Leave a review <i class="fa fa-angle-right"></i></a>
+            	<a href="#make-claim-signup" class="submit-review-signup">Make a claim  <i class="fa fa-angle-right"></i></a>
             </div>
         </div>
     </div>
 </div>
 </div>
 
-<div id="popup-signup" class="container mfp-hide" style="height:480px;width:760px;">
+<div id="submit-review-signup" class="container col-xs-12 mfp-hide">
 		<div class="text-right closepopup close-mag-popup">×</div>
 			
 			<div class="row">
-				<div class="col-sm-6 hidden-xs" style="height:480px;background: url(assets/images/life-style-2.png) center center;background-size:cover;">
-					&nbsp;
-				</div>
-				<div class="col-sm-6 alt-bg text-left" style="height:480px;padding:40px;font-size:13px">
-					
-
-					<div class="title-size-4  font-alt  m-t-10 m-b-30 align-left">
-						Download the app and <b>travel more</b>
-					</div>
-					<div class="p-t-60 p-b-10">
-						Send me a free download link via text message
+				<div class="col-sm-6 alt-bg text-left" style="overflow: hidden;
+    padding: 30px 50px 100px 50px;">			
+					<div class="" style="text-align:center;">
+						<img src="assets/images/leave_a_review.png">
+						<h3>Leave a review</h3>
+						<p>Leave a review of your guest</p>
 					</div>
 					<div>
 						<form class="">
 						<div class="form-group" style="white-space:nowrap;">
-							<input class="form-control input-lg" type="text" placeholder="US +1 xxx-xxx-xxxx" style="border: #fff;">
-							<button type="submit" class="btn  bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;width: 100%;">Send</button>
+							<textarea class="form-control input-lg" type="text" placeholder="Say something about your guest" style="border: #fff;height: 150px;"></textarea>
+							<button type="submit" class="btn  pull-right bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;">Submit my review</button>
 						</div>
 						</form>
 						
 					</div>
-					<div class="p-t-10 p-b-10">
-						-or-
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="make-claim-signup" class="container col-xs-12 mfp-hide">
+		<div class="text-right closepopup close-mag-popup">×</div>
+			
+			<div class="row">
+				<div class="col-sm-6 alt-bg text-left" style="overflow: hidden;
+    padding: 30px 50px 100px 50px;">			
+					<div class="" style="text-align:center;">
+						<img src="assets/images/make_a_claim.png">
+						<h3>Make a claim</h3>
+						<p>Please tell us the reason for your claim so that we can best assist you.</p>
 					</div>
-					<img src="assets/images/appstoreicon.png" class="appstoreicon">
+					<div>
+						<form class="">
+
+						<div class="form-group" style="white-space:nowrap;">
+							<select class="form-control" style="margin-bottom:20px;">
+								<option>Something is missing</option>
+								<option>Something is missing</option>
+							</select>
+							<textarea class="form-control input-lg" type="text" placeholder="Say something about your guest" style="border: #fff;height: 150px;"></textarea>
+							<button type="submit" class="btn  pull-right bg-brand-green btn-round btn-lg" style="margin-top:15px;color:#fff;font-weight:bold;">Make a claim</button>
+						</div>
+						</form>
+						
+					</div>
 
 				</div>
 

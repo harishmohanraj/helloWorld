@@ -292,8 +292,10 @@ Reservation page
 .reservation-wrapper .thumbnail .calendar-widget-wrapper{
     margin: 10px 0px 20px 0px;
 }
-.reservation-wrapper .thumbnail .calendar-widget-wrapper .calendar-widget:last-child{
-        border-left: 1px solid gray;
+.reservation-wrapper .thumbnail .calendar-widget-wrapper .calendar-widget:first-child{
+        border-right: 1px solid gray;
+        margin-right: 20px;
+        padding-right: 20px;
 }
 .reservation-wrapper .thumbnail{
     margin-top: 10px;
@@ -306,6 +308,7 @@ Reservation page
     display: block;
     margin: 5px 0px;
     color: #47c3c6;
+    font-size: 13px;
 }
 .reservation-wrapper .thumbnail .guest{
     display: inline-block;
@@ -313,9 +316,6 @@ Reservation page
 }
 .reservation-wrapper .thumbnail .guest a i{
     margin-left: 8px;
-}
-.reservation-wrapper .thumbnail .guest.previous{
-    display: none;
 }
 .reservation-wrapper .thumbnail .guest.previous.inline{
     display: inline-block;
