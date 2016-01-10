@@ -8,8 +8,8 @@
 <div class="row">
 	<div class="col-sm-2 hidden-xs">
 		<ul class="nav">
-			<li ng-class="{'active': isUpcomingView}"><a href="#inbox" ng-click="listUpcoming()">Upcoming</a></li>
-			<li ng-class="{'active': isPastView}"><a href="#inbox" ng-click="listPast()">Previous</a></li>
+			<li ng-class="{'active': isUpcomingView}"><a href="#reservations" ng-click="listUpcoming()">Upcoming</a></li>
+			<li ng-class="{'active': isPastView}"><a href="#reservations" ng-click="listPast()">Previous</a></li>
 		</ul>
 	</div>
     <div class="col-xs-12 col-sm-10">
@@ -53,7 +53,7 @@
 	            	<a href="#">Guest information <i class="fa fa-angle-right"></i></a>
 	            	<a href="#">Message history <i class="fa fa-angle-right"></i></a>	
             	</div>	
-            	<div class="guest previous hidden-xs" style="margin-top:25px;">
+            	<div class="guest previous hidden-xs" ng-if ="displayReview" style="margin-top:25px;">
 	            	<a href="#submit-review-signup" class="submit-review-signup">Leave a review <i class="fa fa-angle-right"></i></a>
 	            	<a href="#make-claim-signup" class="submit-review-signup">Make a claim  <i class="fa fa-angle-right"></i></a>
 	            </div>

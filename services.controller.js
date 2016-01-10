@@ -29,7 +29,7 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
             upcomingTrips.get({}, function(data) {
                 if (data.success) {
                     $scope.bookings = data.bookings;
-                    $scope.displayReview = false;
+                    //$scope.displayReview = false;
                 }
             }, function() {
                 //error handle
@@ -50,7 +50,7 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
             upPastTrips.get({}, function(data) {
                 if (data.success) {
                     $scope.bookings = data.bookings;
-                    $scope.displayReview = true;
+                    //$scope.displayReview = true;
 
                 }
             }, function() {
@@ -133,15 +133,20 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
     $scope.listUpcoming = function () {
         $scope.isUpcomingView = true;
         $scope.isPastView = false;
+        $scope.displayReview = false;
         
-        $scope.getPastEvent();
+        $scope.getUpcomingEvent();
+        
     }
 
     $scope.listPast = function () {
         $scope.isPastView = true;
         $scope.isUpcomingView = true;
-        $scope.getUpcomingEvent();
+        $scope.displayReview = true;
+
+        $scope.getPastEvent();
     }
+
     //Load Messages by default
     $scope.getUpcomingEvent();
 }]);
