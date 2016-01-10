@@ -128,6 +128,7 @@ span.stars span {
 section#account-property .existing-property .prop-details .manage-prop{
     color:#47c3c5;
     margin-top:20px;
+    cursor: pointer;
 }
 section#account-property .existing-property .prop-details .manage-prop i{
     margin-right:5px;

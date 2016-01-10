@@ -719,7 +719,19 @@
  }]);
 
  app.controller("propertiesController", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
+    app.apiRoot = 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api';
+    var apiUrls = {
+        'postNew': app.apiRoot + '/property/create',
+        'updateExisting': app.apiRoot + '/property/updateAmenities'
+    };
      if (window.sessionStorage.session_token !== undefined) {
+        $scope.manageProperty = function(prop){
+            $scope.formData = prop;
+            jQuery('.property-wrapper .list-existing').hide();
+            jQuery('.property-wrapper .add-new').show();
+            $scope.updateProperty = true;
+            $scope.updatePropertyId = prop.unique_id;
+        }
          $scope.getProps = function() {
              var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {}, {
                  get: {
@@ -802,26 +814,41 @@
 
              // process the form
              $scope.processForm = function() {
-                 console.log($scope.formData);
-                 $http({
-                         method: 'POST',
-                         url: 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/create',
-                         data: $.param($scope.formData), // pass in data as strings
-                         headers: {
-                             'Content-Type': 'application/x-www-form-urlencoded',
-                             'Authorization': '' + window.sessionStorage.session_token
-                         } // set the headers so angular passing info as form data (not request payload)
-                     })
+
+                var newProp = { 
+                            method: 'POST',
+                            url: apiUrls.postNew,
+                            data: $.param($scope.formData), // pass in data as strings
+                             headers: {
+                                 'Content-Type': 'application/x-www-form-urlencoded',
+                                 'Authorization': '' + window.sessionStorage.session_token
+                             }
+                        },
+                    updateProp = { 
+                            method: 'POST',
+                            url: apiUrls.updateExisting,
+                            data: $.param($scope.formData), // pass in data as strings
+                             headers: {
+                                 'Content-Type': 'application/x-www-form-urlencoded',
+                                 'Authorization': '' + window.sessionStorage.session_token,
+                                 'property_id' : $scope.updatePropertyId
+                             }
+                        };
+                 $http(($scope.updateProperty) ? updateProp : newProp)
                      .success(function(data) {
                          console.log(data);
 
                          if (!data.success) {
                              // if not successful, bind errors to error variables
-                             $scope.errorName = data.errors.name;
-                             $scope.errorSuperhero = data.errors.superheroAlias;
+                             //$scope.errorName = data.errors.name;
+                             //$scope.errorSuperhero = data.errors.superheroAlias;
                          } else {
                              // if successful, bind success message to message
                              $scope.message = data.message;
+                             var ask = window.confirm("Your property is added. Click yes to navigate to your Dashboard");
+                             if (ask) {
+                                    document.location.href = "profile.html";
+                                }
                          }
                      });
              };
