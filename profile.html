@@ -83,13 +83,55 @@
 
 		<div class="collapse navbar-collapse" id="custom-collapse">
 
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right" ng-if="!showProfile">
 
 				<li><a href="#popup-signup" class="open-popup-signup"><div class="btn signupbutton">Sign Up</div></a></li>
 
 				<li><a href="#" class="hostbuttonlink"><div class="btn hostbutton">Become a Host</div></a></li>
 
 			</ul>
+			<ul class="nav navbar-nav navbar-right" ng-if="showProfile">
+                  <li class="dropdown">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                 <strong>Nombre</strong>
+                                 <span class="glyphicon glyphicon-chevron-down"></span>
+                                 </a>
+                                 <ul class="dropdown-menu" style="margin-top:10px;-moz-box-shadow:    1px 1px 1px 1px #ccc;
+  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  box-shadow:         1px 1px 1px 1px #ccc;">
+                                    <li>
+                                       <div class="navbar-login">
+                                          <div class="row">
+                                             <div class="col-lg-12">
+                                                <p>
+                                                   <a href="#" class="btn btn-primary btn-block">List my property</a>
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <a href="profile.html" class="">Dashboard</a>
+                                    </li>
+                                    <li>
+                                       <a href="profile.html#/properties" class="">My Properties</a>
+                                    </li>
+                                    <li>
+                                       <a href="profile.html#/reservations" class="">Reservations</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                       <a href="#" class="">Profile</a>
+                                    </li>
+                                    <li>
+                                       <a href="profile.html#/settings" class="">Settings</a>
+                                    </li>
+                                    <li>
+                                       <a href="#" class="">Sign Out</a>
+                                    </li>
+                                 </ul>
+                              </li>
+               </ul>
 		</div>
 
 	</div>

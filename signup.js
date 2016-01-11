@@ -229,7 +229,8 @@
 
                  //@todo redirect or further op __ 
 
-                 $window.location.href = "profile.html";
+                 //$window.location.href = "profile.html";
+                 $window.location.href = "signup.html"; 
 
                  //$scope.reset();  
 
@@ -854,9 +855,9 @@
                          } else {
                              // if successful, bind success message to message
                              $scope.message = data.message;
-                             var ask = window.confirm("Your property is added. Click yes to navigate to your Dashboard");
+                             var ask = window.confirm("Your property is added. Click yes to Continue");
                              if (ask) {
-                                    document.location.href = "profile.html";
+                                    document.location.href = "profile.html#/properties";
                                 }
                          }
                      });
