@@ -381,7 +381,6 @@
 
 
      $scope.addPropertyImg2 = function(file, errFiles, e_pic_id) {
-
          var imgElem = document.getElementById("prop_pic_" + e_pic_id);
 
 
@@ -718,12 +717,17 @@
 
  }]);
 
- app.controller("propertiesController", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
+ app.controller("propertiesController", ['$scope', '$resource', '$http', 'Upload', '$timeout', function($scope, $resource, $http, Upload, $timeout) {
     app.apiRoot = 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api';
     var apiUrls = {
         'postNew': app.apiRoot + '/property/create',
         'updateExisting': app.apiRoot + '/property/updateAmenities'
     };
+
+    $scope.f = [];
+    $scope.sbaProj = {};
+    $scope.sbaProj.prop_pic = [];
+
      if (window.sessionStorage.session_token !== undefined) {
         $scope.manageProperty = function(prop){
             $scope.formData = prop;
@@ -731,6 +735,7 @@
             jQuery('.property-wrapper .add-new').show();
             $scope.updateProperty = true;
             $scope.updatePropertyId = prop.unique_id;
+
         }
          $scope.getProps = function() {
              var User = $resource('http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/myProperties', {}, {
@@ -855,6 +860,58 @@
          }
 
          $scope.getProps();
+
+
+        $scope.addPropertyImg2 = function(file, errFiles, e_pic_id) {
+
+         var imgElem = document.getElementById("prop_pic_" + e_pic_id);
+         var propertyId = $scope.updatePropertyId;
+         var apiUrl = 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api/property/postPhoto?property_id=' + propertyId;
+
+         $scope.f[e_pic_id] = file;
+
+         $scope.errFile = errFiles && errFiles[0];
+
+
+
+         if (file) {
+             file.upload = Upload.upload({
+                 url: apiUrl,
+                 data: {
+                     photo: file
+                 },
+                 headers: {
+                     'Authorization': window.sessionStorage.session_token
+                 },
+                 disableProgress: false,
+             });
+
+             file.upload.then(function(response) {
+                 $timeout(function() {
+                    // console.log(response)
+                     if (response.data.success) {
+                         imgElem.src = response.data.media.thumbnail_url;
+                         $scope.sbaProj.prop_pic[e_pic_id] = 1;
+                         // alert('done');
+                         // console.log(e_pic_id)
+                         // console.log($scope.sbaProj.prop_pic[e_pic_id]);
+                     } else {
+                         // $scope.sbaProj.frmError = response.data.error;
+                     }
+                 });
+             }, function(response) { //error 
+                 $scope.sbaProj.frmError = "User is not authorized.";
+             }, function(evt) {
+                 file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+             });
+         }
+
+
+
+
+     };
+
+
      } else {
          window.alert("please log in")
      }
