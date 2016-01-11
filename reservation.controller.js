@@ -76,7 +76,6 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
 
     // submit a reviewq
     $scope.callForPastEvent = function(){
-        console.log("calling")
         $('.submit-review-signup , .make-claim-signup').magnificPopup({
             type: 'inline',
             midClick: true,
@@ -120,7 +119,9 @@ app.controller("reservationsController", ['$scope', '$resource', '$http', 'Uploa
         $scope.isPastView = true;
         $scope.isUpcomingView = true;
         $scope.displayReview = true;
-        //$scope.callForPastEvent();
+        setTimeout(function(){
+            $scope.callForPastEvent();
+        },100);
         $scope.getPastEvent();
 
     }

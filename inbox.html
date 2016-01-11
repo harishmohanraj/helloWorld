@@ -1,7 +1,7 @@
 <div class="row" ng-if="!detailView">
 	<div class="col-sm-3">
 		<ul class="nav">
-			<li><a href="#">Standbyapps</a></li>
+			<li><a href="#inbox">Standbyapps</a></li>
 			<li ng-if="isConversationView"  ng-class="{'active': isConversationView}"><a href="#inbox" ng-click="listMessages()">Conversations</a></li>
 			<li ng-if="!isConversationView" ng-class="{'active': isMessageView}"><a href="#inbox" ng-click="getMessages()">Messages</a></li>
 			<li ng-if="!isConversationView" ng-class="{'active': isClaimView}"><a href="#inbox" ng-click="getClaims()">Claims</a></li>
