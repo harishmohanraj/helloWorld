@@ -47,6 +47,10 @@
      $scope.sbaProj = {};
      $scope.sbaProj.title = "StandbyApps";
      $scope.sbaProj.frmError = "";
+     $scope.showProfile = false;
+     if(sessionStorage.session_token){
+        $scope.showProfile = true;
+     }
  }]);
 
 
