@@ -1,0 +1,29 @@
+  <div id="conversationList">
+    <div ng-repeat="eachMessage in messages" class="row">
+        <div class="col-xs-2" ng-class-odd="'col-xs-push-10'">
+          <a href=""><img title="{{eachMessage.traveler.user.first_name}}" src="{{eachMessage.traveler.user.image_url}}?{{$index}}" class="img-thumbnail img-responsive img-circle" ng-class-even="'pull-right'" ng-class-odd="'pull-left'"></a>
+        </div>  
+        <div class="col-xs-10" ng-class-odd="'col-xs-pull-2'">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              {{eachMessage.message}}<br>
+              <span class="label label-info">17 May 2015</span>
+            </div>
+          </div>
+        </div>
+      </div><!--/row-->
+  </div><!--/row-->
+  
+ <!--  <div class="col-sm-2  col-xs-3">
+    <img class="img-circle" src="{{eachMessage.traveler.user.image_url}}" title="{{eachMessage.traveler.user.first_name}}"/>
+    <p class="hidden-xs">{{eachMessage.traveler.user.first_name}}</p>
+  </div>
+  <div class="col-sm-10 col-xs-9">
+    <p class="visible-xs hidden-sm">{{eachMessage.traveler.user.first_name}}</p>
+    <p ng-if="isMessages || isClaims">{{eachMessage.message}}</p>
+    <p ng-if="isConversations">{{eachMessage.last_message.message}}</p>
+    <p>
+      <span class="muted">17 May 2015</span>
+      <span class="pull-right label" ng-if="isClaims" ng-class="{'label-success' : eachMessage.message_type == 'accepted', 'label-warning' : eachMessage.message_type == 'inprocess', 'label-danger' : eachMessage.message_type == 'declined'}">{{eachMessage.message_type}}</span>
+    </p>
+  </div> -->

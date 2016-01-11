@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-if="!detailView">
 	<div class="col-sm-3">
 		<ul class="nav">
 			<li><a href="#">Standbyapps</a></li>
@@ -13,7 +13,7 @@
 				<img class="img-circle" src="{{eachMessage.traveler.user.image_url}}" title="{{eachMessage.traveler.user.first_name}}"/>
 				<p class="hidden-xs">{{eachMessage.traveler.user.first_name}}</p>
 			</div>
-			<div class="col-sm-10 col-xs-9">
+			<div class="col-sm-10 col-xs-9" ng-click="getDetails(messageType, eachMessage.unique_id)" data-id style="cursor:pointer">
 				<p class="visible-xs hidden-sm">{{eachMessage.traveler.user.first_name}}</p>
 				<p ng-if="isMessages || isClaims">{{eachMessage.message}}</p>
 				<p ng-if="isConversations">{{eachMessage.last_message.message}}</p>

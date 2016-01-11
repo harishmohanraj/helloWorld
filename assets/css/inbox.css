@@ -1,0 +1,30 @@
+html.conversation .wrapper {
+	background: #efefef;
+}
+
+.message-conversation{
+	background: #fff;
+}
+
+
+/* creates the larger triangle */
+.message-conversation:before {
+  content:"";
+  position:absolute;
+  bottom:-140px;
+  right:0;
+  border-width:0 0 140px 140px;
+  border-style:solid;
+  border-color:transparent #fff;
+}
+
+/* creates the larger triangle */
+.message-conversation:after {
+  content:"";
+  position:absolute;
+  bottom:-140px;
+  right:85px;
+  border-width:0 0 140px 55px;
+  border-style:solid;
+  border-color:transparent #efefef;
+}
