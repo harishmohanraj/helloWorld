@@ -234,8 +234,8 @@
 
                  //@todo redirect or further op __ 
 
-                 //$window.location.href = "profile.html";
-                 $window.location.href = "signup.html"; 
+                 $window.location.href = "profile.html";
+                 //$window.location.href = "signup.html"; 
 
                  //$scope.reset();  
 
