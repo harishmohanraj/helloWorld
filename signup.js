@@ -721,7 +721,12 @@
      })
  }]);
  app.controller("dashboardController", ['$scope', '$resource', '$http', 'Upload', function($scope, $resource, $http, Upload) {
-
+    if (window.sessionStorage.session_token == undefined) {
+             var ask = window.confirm("Please login.");
+             if (ask) {
+                    document.location.href = "login.html";
+                }
+         }
      // create a message to display in our view
      $scope.message = 'Dashboard Page Goes Here!';
 
@@ -925,7 +930,7 @@
 
 
      } else {
-         window.alert("please log in")
+         document.location.href = "login.html";
      }
 
 
