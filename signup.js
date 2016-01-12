@@ -51,6 +51,11 @@
      if(sessionStorage.session_token){
         $scope.showProfile = true;
      }
+     $scope.logout = function() {
+         $scope.isLoggedin = false;
+         sessionStorage.clear();
+     };
+
  }]);
 
 
