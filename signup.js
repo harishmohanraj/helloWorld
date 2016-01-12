@@ -731,7 +731,9 @@
     app.apiRoot = 'http://strabbodevapi-211215818.us-east-1.elb.amazonaws.com/standbyapps-server/api';
     var apiUrls = {
         'postNew': app.apiRoot + '/property/create',
-        'updateExisting': app.apiRoot + '/property/updateAmenities'
+        'updateAmenities': app.apiRoot + '/property/updateAmenities',
+        'updateMetadata' : app.apiRoot + '/property/update', //call at the last
+        'updateSchedule' : app.apiRoot + '/property/updateSchedule'
     };
 
     $scope.f = [];
@@ -841,12 +843,12 @@
                         },
                     updateProp = { 
                             method: 'POST',
-                            url: apiUrls.updateExisting,
-                            data: $.param($scope.formData), // pass in data as strings
+                            url: apiUrls.updateMetadata,
+                            data: $.param($scope.formData) + '&property_id=' + $scope.updatePropertyId, // pass in data as strings
                              headers: {
                                  'Content-Type': 'application/x-www-form-urlencoded',
-                                 'Authorization': '' + window.sessionStorage.session_token,
-                                 'property_id' : $scope.updatePropertyId
+                                 'Authorization': '' + window.sessionStorage.session_token
+                                 
                              }
                         };
                  $http(($scope.updateProperty) ? updateProp : newProp)
@@ -862,7 +864,7 @@
                              $scope.message = data.message;
                              var ask = window.confirm("Your property is added. Click yes to Continue");
                              if (ask) {
-                                    document.location.href = "profile.html#/properties";
+                                    document.location.href = "profile.html";
                                 }
                          }
                      });
