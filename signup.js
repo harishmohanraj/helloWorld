@@ -860,12 +860,25 @@
                              //$scope.errorName = data.errors.name;
                              //$scope.errorSuperhero = data.errors.superheroAlias;
                          } else {
-                             // if successful, bind success message to message
-                             $scope.message = data.message;
-                             var ask = window.confirm("Your property is added. Click yes to Continue");
-                             if (ask) {
-                                    document.location.href = "profile.html";
+                            var propUpdated = function (message){
+                                $scope.message = message;
+                                 var ask = window.confirm("Your property is added. Click yes to Continue");
+                                 if (ask) {
+                                        document.location.href = "profile.html";
+                                    }
+                            }
+                            if ( newProp ) {
+                                $scope.updatePropertyId = data.property.unique_id;
+                                $scope.imagesDone = 0;
+                                var callback = function (){
+                                    propUpdated(data.message)
                                 }
+                                $scope.uploadImages(callback);
+                            }else{
+                             // if successful, bind success message to message
+                                propUpdated(data.message)
+
+                            }
                          }
                      });
              };
@@ -873,8 +886,35 @@
 
          $scope.getProps();
 
+         $scope.images = [];
+         $scope.imagesDone = 0;
+         $scope.imagesDone = function(){
 
-        $scope.addPropertyImg2 = function(file, errFiles, e_pic_id) {
+         }
+
+         $scope.uploadImages = function(cb){
+            if ($scope.images.length) {
+                $.each($scope.images, function(i, v){
+                    $scope.addPropertyImg2(v.file, v.err, v.e_pic_id, cb);
+                });
+                // $scope.imagesDone = cb;
+            }else{
+                cb.call();
+            }
+         }
+
+
+        $scope.addPropertyImg2 = function(file, errFiles, e_pic_id, cb) {
+
+            if ( !$scope.updatePropertyId ) {
+                $scope.images.push({
+                    'file': file,
+                    'err': errFiles,
+                    'e_pic_id': e_pic_id
+                });
+                return;
+            }
+
 
          var imgElem = document.getElementById("prop_pic_" + e_pic_id);
          var propertyId = $scope.updatePropertyId;
@@ -904,6 +944,12 @@
                      if (response.data.success) {
                          imgElem.src = response.data.media.thumbnail_url;
                          $scope.sbaProj.prop_pic[e_pic_id] = 1;
+                         if (cb){
+                            $scope.imagesDone++;
+                            if($scope.images.length == $scope.imagesDone){
+                                cb.call();
+                            }
+                         }
                          // alert('done');
                          // console.log(e_pic_id)
                          // console.log($scope.sbaProj.prop_pic[e_pic_id]);
